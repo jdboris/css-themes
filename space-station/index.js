@@ -1,1 +1,1 @@
-export { default as theme } from "./theme.module.scss";
+export { default } from "./theme.module.scss";
