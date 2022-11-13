@@ -1,26 +1,298 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@use "landing-page";
 
-* {
-  box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 html,
 body {
-  margin: 0;
+  font-size: 16px;
   padding: 0;
-  height: 2000px;
-  font-family: "Kanit", sans-serif;
+  margin: 0;
 }
 
-body {
-  background: black;
+* {
+  // NOTE: Allows scrolling to this element to work correctly
+  scroll-margin: 5rem;
+  box-sizing: border-box;
 }
 
-app-root {
-  > header {
+$max-content-width: 1280px;
+
+.root {
+  min-height: 100%;
+
+  font-family: "Kanit";
+  font-size: 1.1em;
+  background: rgb(25, 20, 31);
+
+  padding-top: 5rem;
+
+  & > main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background: white;
+  }
+
+  & > header {
+    display: flex;
+    justify-content: space-between;
+    background: white;
     position: fixed;
     width: 100%;
+    top: 0;
+    z-index: 5;
+    background: rgb(25, 20, 31);
+
+    nav {
+      display: flex;
+      position: relative;
+      flex-wrap: wrap;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9em;
+      color: white;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+
+      // NOTE: Required to center logo only after wrapping
+      width: 100%;
+      justify-content: center;
+      overflow: hidden;
+      height: 5rem;
+      background: inherit;
+
+      > button {
+        position: absolute;
+        align-self: center;
+        color: white !important;
+        right: 0;
+
+        > * {
+          font-size: 2em;
+        }
+      }
+
+      ul {
+        display: inline-flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        // NOTE: Required to center logo only after wrapping
+        margin-left: auto;
+        z-index: 1;
+        background: inherit;
+        height: inherit;
+
+        li {
+          display: inline-flex;
+        }
+      }
+
+      a:not(.logo) {
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+      }
+
+      a:not(.logo):hover {
+        color: #c195f3;
+        border-bottom-color: inherit;
+        transition: color 0.1s;
+      }
+
+      img {
+        height: 3em;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.37);
+      }
+
+      &.open {
+        overflow: visible;
+
+        ul {
+          flex-direction: column;
+          position: absolute;
+          right: 0;
+          top: 100%;
+          height: 100vh;
+
+          a {
+            border-top: 0;
+            border-bottom: 0;
+            width: 100%;
+          }
+
+          button {
+            margin: 1em;
+          }
+        }
+
+        .overlay {
+          display: initial;
+        }
+      }
+    }
   }
+
+  & > footer {
+    background: rgb(25, 20, 31);
+    color: grey;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    nav {
+      a {
+        display: inline-flex;
+        transition: rotate 0.1s;
+        padding: 0.5em;
+
+        img {
+          width: 2em;
+        }
+      }
+
+      a:hover,
+      a:focus,
+      a:active {
+        rotate: 5deg;
+
+        transition: rotate 0.1s;
+      }
+    }
+  }
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  padding: 1em;
+  cursor: pointer;
+}
+
+nav button {
+  margin-left: 1em;
+  margin-right: 1em;
+  align-self: center;
+}
+
+a * {
+  cursor: inherit;
+}
+
+small {
+  opacity: 0.5;
+  color: gray;
+  font-size: 0.7em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  width: 100%;
+
+  small {
+    font-size: 0.9rem;
+    font-weight: normal;
+    text-transform: initial;
+    opacity: 0.5;
+    width: 100%;
+  }
+}
+
+h1 {
+  font-size: 3em;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0.3em;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  padding: 1em;
+}
+
+::placeholder {
+  font-style: italic;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote {
+  position: relative;
+  color: #8b8b8b;
+  font-style: italic;
+  background: #f9f9f9;
+  border-left: 10px solid rgb(118, 80, 161);
+  margin: 1.5em 10px;
+  padding: 1.1em 10px;
+  padding-left: 2em;
+}
+
+blockquote:before {
+  content: "\201C";
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ccc;
+  font-size: 4em;
+  left: 0.1em;
+  top: 0em;
+}
+
+code {
+  display: inline;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  color: #666;
+  font-family: monospace;
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  overflow: auto;
+  word-wrap: break-word;
+  padding: 0em 0.2em;
+  border-radius: 0.2em;
+}
+
+pre code {
+  display: block;
+  border-left: 3px solid rgb(118, 80, 161);
+  page-break-inside: avoid;
+  max-width: 100%;
+  padding: 1em 1.5em;
+  margin: 10px;
 }
 
 button,
@@ -44,4 +316,84 @@ button,
   color: initial;
   background-color: initial;
   padding: 0.1em;
+}
+
+button[disabled],
+.button[disabled] {
+  cursor: initial;
+  opacity: 0.5;
+}
+
+a[rel="author"] {
+  font-weight: bold;
+  color: #b50000;
+}
+
+.article {
+  // border-bottom: 0.2em solid #7650a1;
+
+  header,
+  footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    // column-gap: 1em;
+
+    h1 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    small {
+      width: 100%;
+    }
+
+    a {
+      svg {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: calc(1280px + 2em);
+  margin: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.paddingContainer {
+  width: 100%;
+  padding-left: calc((100% - $max-content-width) / 2);
+  padding-right: calc((100% - $max-content-width) / 2);
+}
+
+.profileImage {
+  border-radius: 50%;
+}
+
+.pageHeader {
+  // background-image: url("./graphic-1-1.svg");
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #92c954;
+  z-index: 3;
+  font-size: 1.2em;
+  padding-left: calc((100% - 1280px) / 2);
+  padding-right: calc((100% - 1280px) / 2);
+  margin: 10px 0;
+
+  h1 {
+    padding: 0.2em;
+
+    font-weight: normal;
+
+    margin: min(0.4em, 5vw);
+  }
 }
