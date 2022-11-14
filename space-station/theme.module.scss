@@ -27,14 +27,15 @@ $max-content-width: 1280px;
   & > main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: auto;
-    background: white;
+    min-height: 100vh;
   }
 
   & > header {
     display: flex;
     justify-content: center;
-    background: white;
     position: fixed;
     width: 100%;
     top: 0;
@@ -184,12 +185,13 @@ nav a {
   cursor: pointer;
 }
 
-nav button {
+nav button,
+nav .button {
   display: inline-flex;
+  justify-content: center;
 
   gap: 0.3em;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin: 1em;
   align-self: center;
 }
 
