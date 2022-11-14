@@ -36,7 +36,7 @@
   }
 
   small {
-    font-size: 2em;
+    font-size: min(2em, 5vw);
     color: white;
     // text-shadow: 0 0 10px #0ea000;
     text-shadow: 0px 0px 5px black;
