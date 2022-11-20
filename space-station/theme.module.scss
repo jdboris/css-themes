@@ -7,6 +7,7 @@ body {
   font-size: 16px;
   padding: 0;
   margin: 0;
+  color: whitesmoke;
 }
 
 * {
@@ -21,7 +22,6 @@ $max-content-width: 1280px;
   min-height: 100%;
 
   font-family: "Kanit";
-  font-size: 1.1em;
   background: rgb(25, 20, 31);
 
   & > main {
@@ -176,6 +176,26 @@ $max-content-width: 1280px;
   }
 }
 
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  justify-content: flex-end;
+}
+
+.smallForm {
+  max-width: 300px;
+  text-align: center;
+
+  label {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+}
+
 nav a {
   display: inline-flex;
   align-items: center;
@@ -217,7 +237,6 @@ h6,
 .h4,
 .h5,
 .h6 {
-  text-transform: uppercase;
   width: 100%;
 
   small {
@@ -229,12 +248,69 @@ h6,
   }
 }
 
+.h1,
+h1 {
+  font-size: 3rem;
+}
+
+.h2,
+h2 {
+  font-size: 2.5rem;
+}
+
+.h3,
+h3 {
+  font-size: 2rem;
+}
+
+.h4,
+h4 {
+  font-size: 1.5rem;
+}
+
+.h5,
+h5 {
+  font-size: 1rem;
+}
+
+.h6,
+h6 {
+  font-size: 0.9rem;
+}
+
+label {
+  > svg {
+    position: absolute;
+    margin-top: 0.9rem;
+    margin-left: 1.2rem;
+
+    & + input {
+      padding-left: 3rem;
+    }
+  }
+}
+
 input,
 textarea {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
-  padding: 0.3em;
+  padding: 0.3rem;
+
+  background: rgb(15, 15, 15);
+  border: 1px solid #1c1c1c;
+  padding: 0.7rem 1.2rem;
+  color: white;
+  border-radius: 5rem;
+  letter-spacing: 0.1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background: rgb(15, 15, 15);
+  color: white;
 }
 
 textarea {
@@ -253,9 +329,25 @@ fieldset {
   border: none;
 }
 
-a {
+a,
+.link {
+  display: inline-flex;
+  align-items: center;
+
   text-decoration: none;
   color: inherit;
+
+  color: #70ffce;
+}
+
+.link {
+  background: none;
+  font-size: initial;
+  text-transform: initial;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 blockquote {
@@ -315,6 +407,7 @@ button,
   border: none;
   border-radius: 0.2em;
   padding: 0.5em 0.9em;
+  font-family: inherit;
   font-size: inherit;
   letter-spacing: inherit;
   cursor: pointer;
@@ -397,5 +490,22 @@ a[rel="author"] {
     font-weight: normal;
 
     margin: min(0.4em, 5vw);
+  }
+}
+
+.sideLines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+
+  &::before,
+  &::after {
+    content: "";
+    content: "";
+    height: 2px;
+    min-width: 6em;
+    background: indianred;
+    margin: 0 0.4em;
   }
 }
