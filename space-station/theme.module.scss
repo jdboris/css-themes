@@ -176,7 +176,8 @@ $max-content-width: 1280px;
   }
 }
 
-form {
+form,
+fieldset {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6em;
@@ -283,6 +284,8 @@ label {
     position: absolute;
     margin-top: 0.9rem;
     margin-left: 1.2rem;
+    // NOTE: Required for bug workaround
+    z-index: 1;
 
     & + input {
       padding-left: 3rem;
@@ -305,12 +308,18 @@ textarea {
   letter-spacing: 0.1rem;
 }
 
+input:disabled,
+textarea {
+  color: gray;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  background: rgb(15, 15, 15);
-  color: white;
+  border: 1px solid white;
+  -webkit-text-fill-color: white;
+  box-shadow: 0 0 0px 1000px #1b1b1b inset;
 }
 
 textarea {
@@ -410,6 +419,9 @@ button,
   font-family: inherit;
   font-size: inherit;
   letter-spacing: inherit;
+
+  align-items: center;
+
   cursor: pointer;
 }
 
@@ -419,15 +431,31 @@ button,
   padding: 0em;
 }
 
-button[disabled],
-.button[disabled] {
-  cursor: initial;
+button:disabled,
+.button:disabled,
+.altButton:disabled {
   opacity: 0.5;
+  cursor: initial;
 }
 
 a[rel="author"] {
   font-weight: bold;
   color: #b50000;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+  color: red;
+  font-size: 0.9em;
+  width: 100%;
+
+  & ~ input {
+    border-color: red;
+    background-color: #250000;
+  }
 }
 
 .article {
