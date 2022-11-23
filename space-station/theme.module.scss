@@ -530,6 +530,16 @@ section {
       gap: 0.3em;
     }
   }
+
+  p {
+    background: #111010;
+    border-radius: 0 0 0.5em 0.5em;
+    padding: 0.5em;
+    margin: 0;
+    margin-top: 0.5em;
+    font-weight: 300;
+    color: lightgrey;
+  }
 }
 
 .badge {
