@@ -33,7 +33,10 @@ $max-content-width: 1280px;
     min-height: 100vh;
 
     > * {
-      max-width: 1280px;
+      max-width: $max-content-width;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -589,8 +592,8 @@ section {
   color: #92c954;
   z-index: 3;
   font-size: 1.2em;
-  padding-left: calc((100% - 1280px) / 2);
-  padding-right: calc((100% - 1280px) / 2);
+  padding-left: calc((100% - $max-content-width) / 2);
+  padding-right: calc((100% - $max-content-width) / 2);
   margin: 10px 0;
 
   h1 {
