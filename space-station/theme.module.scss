@@ -343,6 +343,29 @@ textarea {
   padding: 1em;
 }
 
+.checkboxLabel {
+  display: inline-flex;
+  // padding: 1em;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  input + * {
+    opacity: 0.3;
+  }
+
+  input:checked + * {
+    opacity: 1;
+  }
+
+  > * {
+    margin: 0;
+    position: relative;
+  }
+}
+
 ::placeholder {
   font-style: italic;
 }
