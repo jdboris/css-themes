@@ -553,6 +553,37 @@ video {
   cursor: pointer;
 }
 
+.videoPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1em;
+
+  background: black;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+
+  position: relative;
+
+  > svg {
+    position: absolute;
+
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 2em;
+    filter: drop-shadow(0px 0px 5px rgb(0 0 0 / 0.8));
+  }
+
+  > video {
+    position: absolute;
+    z-index: -1;
+  }
+}
+
 section {
   > ul {
     display: flex;
@@ -633,7 +664,7 @@ section {
       z-index: 1;
     }
 
-    video {
+    .videoPlayer {
       z-index: 2;
     }
 
