@@ -491,6 +491,23 @@ a[rel="author"] {
   background: rgba(0, 0, 0, 0.5);
 }
 
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+  color: rgb(119, 255, 119);
+  font-size: 0.9em;
+  width: 100%;
+  font-weight: 200;
+  opacity: 1;
+
+  & ~ input {
+    border-color: rgb(119, 255, 119);
+    background-color: #002502;
+  }
+}
+
 .error {
   display: flex;
   justify-content: center;
