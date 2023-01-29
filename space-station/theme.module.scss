@@ -177,8 +177,11 @@ form,
 fieldset {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6em;
   justify-content: flex-end;
+}
+
+fieldset {
+  gap: 0.6em;
 }
 
 .smallForm {
@@ -277,10 +280,16 @@ h6 {
 }
 
 label {
+  position: relative;
+
   > svg {
     position: absolute;
-    margin-top: 0.9rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
     margin-left: 1.2rem;
+
     // NOTE: Required for bug workaround
     z-index: 1;
 
@@ -305,8 +314,17 @@ textarea {
   letter-spacing: 0.1rem;
 }
 
-input:disabled,
 textarea {
+  border-radius: 5px;
+  min-height: 150px;
+}
+
+input.small {
+  max-width: 6em;
+}
+
+input:disabled,
+textarea:disabled {
   color: gray;
 }
 
@@ -458,6 +476,8 @@ a[rel="author"] {
   color: red;
   font-size: 0.9em;
   width: 100%;
+  font-weight: 200;
+  opacity: 1;
 
   & ~ input {
     border-color: red;
@@ -497,7 +517,8 @@ section {
   > ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3em;
+    list-style: none;
+    gap: 1.2em;
     padding: 0;
     margin: 0;
 
@@ -514,7 +535,16 @@ section {
   box-shadow: 0 0 4px black;
   flex-direction: column;
   min-width: 300px;
+  min-height: 160px;
   flex-grow: 1;
+
+  justify-content: initial;
+
+  &:not(.open) {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 
   > header {
     font-weight: 600;
@@ -529,7 +559,6 @@ section {
   ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3em;
     padding: 0;
     margin: 0;
 
@@ -577,7 +606,8 @@ section {
 
       justify-content: space-between;
       width: 100%;
-      padding: 0 0.5em;
+      height: 1.5em;
+      padding: 0 0.4em;
 
       filter: drop-shadow(0px 0px 3px black);
       z-index: 2;
@@ -597,6 +627,7 @@ section {
   padding: 0.15em 0.7em;
   font-size: 0.9em;
   border-radius: 2em;
+  white-space: nowrap;
 }
 
 .paddingContainer {
