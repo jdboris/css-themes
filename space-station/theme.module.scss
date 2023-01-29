@@ -691,6 +691,12 @@ section {
   }
 }
 
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
 .badge {
   display: inline;
   list-style: none;
