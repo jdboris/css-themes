@@ -762,3 +762,11 @@ section {
   box-shadow: none;
   background: none;
 }
+
+.installButton {
+  margin-top: 0.7em;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
