@@ -1,7 +1,9 @@
 @use "landing-page";
+@use "booking-page";
 
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Genos:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 html,
 body {
@@ -74,6 +76,8 @@ $max-content-width: 1280px;
         align-self: center;
         color: white !important;
         right: 0;
+        // NOTE: Required for the chain of cascading overlapping that stems from range input
+        z-index: 1;
 
         > * {
           font-size: 2em;
@@ -89,7 +93,7 @@ $max-content-width: 1280px;
 
         // NOTE: Required to center logo only after wrapping
         margin-left: auto;
-        z-index: 1;
+        z-index: 2;
         background: inherit;
         height: inherit;
 
@@ -103,7 +107,7 @@ $max-content-width: 1280px;
         transition: color 0.1s, box-shadow 0.25s;
       }
 
-      .altButton:hover,
+      button.alt:hover,
       a:not(.logo):hover {
         // color: #95f39e;
         // color: #99ffa0;
@@ -113,12 +117,12 @@ $max-content-width: 1280px;
         font-family: "Genos", sans-serif;
         padding: 1rem;
         text-transform: none;
-        font-size: 2.5em;
+        font-size: 2.1em;
         filter: drop-shadow(0px 0px 6px #000000);
       }
 
       img {
-        height: 2rem;
+        height: 1.2rem;
       }
 
       &.open {
@@ -186,11 +190,15 @@ form,
 fieldset {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+
+  > button:last-child {
+    margin-left: auto;
+  }
 }
 
 fieldset {
-  gap: 0.6em;
+  gap: 1.4em;
+  position: relative;
 }
 
 .smallForm {
@@ -233,6 +241,15 @@ small {
   opacity: 0.5;
   color: gray;
   font-size: 0.7em;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 h1,
@@ -293,11 +310,8 @@ label {
 
   > svg {
     position: absolute;
-    margin-top: auto;
-    margin-bottom: auto;
-    top: 0;
-    bottom: 0;
-    margin-left: 1.2rem;
+    top: 0.9rem;
+    left: 1.2rem;
 
     // NOTE: Required for bug workaround
     z-index: 1;
@@ -306,11 +320,58 @@ label {
       padding-left: 3rem;
     }
   }
+
+  // > small {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   min-width: 100%;
+  //   margin: auto;
+  //   font-size: 1em;
+  //   white-space: nowrap;
+  //   pointer-events: none;
+  //   opacity: 0.8;
+  //   // letter-spacing: 0.1em;
+
+  //   transition: top 0.05s, font-size 0.05s, transform 0.05s;
+  // }
+
+  // > input:focus ~ small,
+  // > input:not([value=""]) ~ small,
+  // > input:not(:placeholder-shown) ~ small {
+  //   font-size: 0.7em;
+  //   top: 0.4em;
+  //   transform: translateY(0);
+  // }
+
+  > small {
+    position: absolute;
+    left: 0;
+    bottom: 0.4em;
+    min-width: 100%;
+    margin: auto;
+    font-size: 1em;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0.8;
+    line-height: 1em;
+    // letter-spacing: 0.1em;
+
+    transition: bottom 0.05s, font-size 0.05s;
+  }
+
+  > input:focus ~ small,
+  > input:not([value=""]) ~ small,
+  > input:not(:placeholder-shown) ~ small {
+    font-size: 0.7em;
+    bottom: 1.7em;
+  }
 }
 
 input,
 textarea {
-  font-family: inherit;
+  font-family: "Chivo Mono", monospace;
   font-size: inherit;
   font-weight: inherit;
   padding: 0.3rem;
@@ -320,7 +381,18 @@ textarea {
   padding: 0.7rem 1.2rem;
   color: white;
   border-radius: 5rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.1em;
+
+  &::calendar-picker-indicator {
+    display: none !important;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    filter: contrast(0%) brightness(350%);
+    cursor: pointer;
+    max-width: 0.7em;
+    background-position: center;
+  }
 }
 
 textarea {
@@ -330,6 +402,15 @@ textarea {
 
 input.small {
   max-width: 6em;
+}
+
+input.alt {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #00ffd0;
+  border-radius: 0;
+  padding: 0;
+  padding-top: 0.8rem;
 }
 
 input:disabled,
@@ -453,7 +534,7 @@ pre code {
 
 button,
 .button,
-.altButton {
+button.alt {
   text-transform: uppercase;
   font-weight: bold;
   color: white;
@@ -472,7 +553,7 @@ button,
   cursor: pointer;
 }
 
-.altButton {
+button.alt {
   display: inline-flex;
   background-color: initial;
   padding: 0em;
@@ -480,7 +561,7 @@ button,
 
 button:disabled,
 .button:disabled,
-.altButton:disabled {
+button.alt:disabled {
   opacity: 0.5;
   cursor: initial;
 }
@@ -491,13 +572,16 @@ a[rel="author"] {
 }
 
 .overlay {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .success {
@@ -518,19 +602,27 @@ a[rel="author"] {
 }
 
 .error {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2em;
+  position: absolute;
   color: red;
-  font-size: 0.9em;
+  font-size: 0.8rem;
   width: 100%;
   font-weight: 200;
   opacity: 1;
+  line-height: 1em;
+  bottom: calc(1px - 0.5rem);
+
+  svg {
+    vertical-align: middle;
+    margin-top: -0.1em;
+  }
 
   & ~ input {
     border-color: red;
-    background-color: #250000;
+    margin-bottom: 0.6rem;
+  }
+  & ~ input ~ small {
+    color: red;
+    margin-bottom: 0.6rem;
   }
 }
 
@@ -612,6 +704,14 @@ section {
       }
     }
   }
+}
+
+.row {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
 }
 
 .card {
@@ -728,6 +828,33 @@ section {
   padding-right: calc((100% - $max-content-width) / 2);
 }
 
+.modal {
+  min-width: 100px;
+  max-width: 350px;
+  background: black;
+
+  > header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em;
+  }
+
+  > main {
+    padding: 2em;
+    background: #060606;
+  }
+}
+
+.fixedButton {
+  position: fixed;
+  display: flex;
+  gap: 0.4em;
+  right: 1em;
+  bottom: 1em;
+  z-index: 1;
+}
+
 .profileImage {
   border-radius: 50%;
 }
@@ -756,6 +883,112 @@ section {
   }
 }
 
+.scale {
+  display: flex;
+
+  > div {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+
+input[type="range"] {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  height: 1rem;
+  border-radius: 0;
+
+  cursor: pointer;
+  z-index: 1;
+
+  &::-webkit-slider-runnable-track {
+    height: 1rem;
+  }
+
+  &::-moz-range-track {
+    height: 1rem;
+  }
+
+  &::-moz-range-thumb {
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    background: #0075ff;
+    border-radius: 50%;
+    border: none;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    background: #0075ff;
+    border-radius: 50%;
+    border: none;
+    margin-top: -0.7rem;
+  }
+
+  & + datalist {
+    padding: 0;
+    padding-left: 1rem;
+    padding-right: 0.9rem;
+    justify-content: space-between;
+    cursor: default;
+
+    * {
+      &::before {
+        content: "";
+        position: absolute;
+        border-left: 1px solid;
+        height: 0.1em;
+        margin-top: -0.5em;
+        color: #939393;
+      }
+
+      display: inline-flex;
+      justify-content: center;
+      user-select: none;
+      font-size: 1rem;
+      width: 1px;
+      padding: 0;
+      margin-top: 0.5em;
+      color: #939393;
+    }
+  }
+}
+
+.timeSlider {
+  background: rgb(15, 15, 15);
+  background: linear-gradient(
+    90deg,
+    rgba(15, 15, 15, 0) 0%,
+    rgba(15, 15, 15, 1) 1.7rem,
+    rgba(15, 15, 15, 1) calc(100% - 1.7rem),
+    rgba(15, 15, 15, 0) 100%
+  );
+}
+
+.timeSlider + datalist {
+  option:nth-child(6n + 1)::before {
+    height: 0.2em;
+  }
+
+  option:nth-child(12n + 1)::before {
+    height: 0.4em;
+  }
+
+  option:first-child::before {
+    height: 0.6em;
+  }
+
+  option:last-child::before {
+    height: 0.6em;
+  }
+}
+
 .sideLines {
   display: flex;
   justify-content: center;
@@ -764,7 +997,6 @@ section {
 
   &::before,
   &::after {
-    content: "";
     content: "";
     height: 2px;
     min-width: 6em;
@@ -784,4 +1016,8 @@ section {
   @media (min-width: 1024px) {
     display: none;
   }
+}
+
+.grayed {
+  filter: brightness(40%);
 }

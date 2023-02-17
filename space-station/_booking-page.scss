@@ -1,0 +1,197 @@
+.bookingPage {
+  padding: 0 0.5rem;
+
+  form {
+    gap: 1em;
+
+    > header {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      font-size: 3em;
+
+      fieldset {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        row-gap: 0;
+
+        > label {
+          display: inline-flex;
+          align-items: center;
+          gap: 0;
+          // NOTE: Required for react-datepicker position
+          position: relative;
+          border-bottom: 2px solid #00ffd0;
+
+          svg {
+            position: initial;
+            font-size: 0.7em;
+            margin: 0;
+            margin-right: 0.2em;
+            margin-top: 5px;
+            cursor: pointer;
+          }
+
+          input {
+            border-bottom: none;
+          }
+        }
+
+        button {
+          font-size: 2rem;
+          padding: 0.5em;
+          margin: 0;
+        }
+
+        input.medium {
+          max-width: 6.9em;
+        }
+
+        input.small {
+          max-width: 3.4em;
+        }
+
+        input[type="text"] {
+          font-size: min(8vw, 3rem);
+          margin-bottom: 0;
+          color: #f0f0f0;
+        }
+
+        input[type="time"] {
+          &::-webkit-calendar-picker-indicator {
+            display: none;
+          }
+        }
+
+        input[type="date"] {
+          max-width: 7em;
+
+          &::calendar-picker-indicator {
+            display: none !important;
+          }
+
+          &::-webkit-calendar-picker-indicator {
+            filter: contrast(0%) brightness(350%);
+            cursor: pointer;
+            max-width: 0.7em;
+            background-position: center;
+          }
+        }
+
+        input[type="date"],
+        input[type="time"] {
+          background: initial;
+          border: initial;
+          padding: 0;
+          border-radius: 5px;
+          line-height: 1;
+          margin: 5px;
+          text-align: center;
+
+          /* 
+          The naming convention for the hour, minute, second, and am/pm field is
+          `-webkit-datetime-edit-{field}-field` 
+          */
+          // /* Hour */
+          // ::-webkit-datetime-edit-hour-field {
+          //   background-color: #f2f4f5;
+          //   border-radius: 15%;
+          //   padding: 19px 13px;
+          // }
+
+          // /* Minute */
+          // ::-webkit-datetime-edit-minute-field {
+          //   background-color: #f2f4f5;
+          //   border-radius: 15%;
+          //   padding: 19px 13px;
+          // }
+
+          // /* AM/PM */
+          // ::-webkit-datetime-edit-ampm-field {
+          //   background-color: #7155d3;
+          //   border-radius: 15%;
+          //   color: #fff;
+          //   padding: 19px 13px;
+          // }
+
+          // /* 'X' button for resetting/clearing time */
+          // ::-webkit-clear-button {
+          //   display: none;
+          // }
+
+          // /* Up/Down arrows for incrementing/decrementing the value */
+          // ::-webkit-inner-spin-button {
+          //   display: none;
+          // }
+        }
+      }
+    }
+
+    > main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      width: 100%;
+
+      button {
+        margin-top: 1em;
+        background: #0075ff;
+      }
+
+      figure {
+        flex-basis: 800px;
+        flex-grow: 1;
+      }
+
+      aside {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        text-align: center;
+        font-size: 1.2em;
+
+        position: relative;
+        flex-basis: 330px;
+        margin: auto;
+
+        fieldset {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        button {
+          width: 100%;
+        }
+
+        label {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          color: gray;
+          line-height: 1;
+          flex-grow: 1;
+
+          > span {
+            font-size: 1.5em;
+            color: white;
+          }
+
+          input {
+            width: 100%;
+          }
+
+          > small {
+            text-align: start;
+          }
+
+          .error {
+            text-align: start;
+          }
+        }
+      }
+    }
+  }
+}
