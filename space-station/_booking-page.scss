@@ -4,6 +4,13 @@
   form {
     gap: 1em;
 
+    em {
+      position: absolute;
+      font-size: 1rem;
+      font-style: italic;
+      opacity: 0.6;
+    }
+
     > header {
       display: flex;
       flex-direction: column;
@@ -139,9 +146,13 @@
         background: #0075ff;
       }
 
-      figure {
+      .map {
         flex-basis: 800px;
         flex-grow: 1;
+
+        em {
+          max-width: 37%;
+        }
       }
 
       aside {

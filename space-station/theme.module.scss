@@ -932,7 +932,7 @@ input[type="range"] {
     background: #0075ff;
     border-radius: 50%;
     border: none;
-    margin-top: -0.7rem;
+    translate: 0 -25%;
   }
 
   & + datalist {
@@ -1024,4 +1024,76 @@ input[type="range"] {
 
 .grayed {
   filter: brightness(40%);
+}
+
+.map {
+  position: relative;
+  align-self: flex-start;
+
+  > img {
+    width: 100%;
+  }
+
+  label {
+    position: absolute;
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+
+    input[type="checkbox"] {
+      display: none;
+
+      ~ * {
+        display: flex;
+        gap: 0.2em;
+        width: 100%;
+        height: 100%;
+        border: 1px solid transparent;
+        padding: 0.5em;
+
+        font-size: min(1.5em, 3.6vw);
+        white-space: nowrap;
+        flex-wrap: wrap;
+        line-height: 1em;
+
+        &::before {
+          content: "";
+          box-sizing: border-box;
+          position: relative;
+          display: inline-flex;
+          width: 1em;
+          height: 1em;
+          border: 2px solid #00ffd0;
+          background: #110e14;
+          overflow: visible;
+        }
+      }
+
+      ~ *:hover {
+        border: 1px solid rgba(255, 255, 255, 0.37);
+      }
+
+      &:checked ~ * {
+        background: #00ff9554;
+
+        &::before {
+          content: "✔";
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      &:disabled {
+        ~ * {
+          background: #000000;
+          opacity: 0.3;
+          cursor: default;
+
+          &:hover {
+            border: 1px solid transparent;
+          }
+        }
+      }
+    }
+  }
 }
