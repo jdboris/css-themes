@@ -50,7 +50,8 @@ $max-content-width: 1280px;
     width: 100%;
     top: 0;
     z-index: 5;
-    background: transparent;
+    background: #32323252;
+    backdrop-filter: blur(1px);
 
     nav {
       display: flex;
@@ -94,7 +95,7 @@ $max-content-width: 1280px;
         // NOTE: Required to center logo only after wrapping
         margin-left: auto;
         z-index: 2;
-        background: inherit;
+        // background: inherit;
         height: inherit;
 
         li {
@@ -308,9 +309,11 @@ h6 {
 label {
   position: relative;
 
-  > svg {
+  svg {
     position: absolute;
-    top: 0.9rem;
+    margin: auto;
+    top: 0;
+    bottom: 0;
     left: 1.2rem;
 
     // NOTE: Required for bug workaround
@@ -581,7 +584,7 @@ a[rel="author"] {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 2;
 }
 
 .success {
@@ -610,17 +613,9 @@ a[rel="author"] {
   line-height: 1em;
 
   svg {
+    position: initial;
     vertical-align: middle;
     margin-top: -0.1em;
-  }
-
-  & ~ input {
-    border-color: red;
-    margin-bottom: 1rem;
-  }
-  & ~ input ~ small {
-    color: red;
-    margin-bottom: 1rem;
   }
 }
 
@@ -628,6 +623,18 @@ label .error {
   position: absolute;
   bottom: 0;
   font-size: 0.8rem;
+
+  & ~ * input,
+  & ~ input {
+    border-color: red;
+    margin-bottom: 1rem;
+  }
+
+  & ~ * input ~ small,
+  & ~ input ~ small {
+    color: red;
+    margin-bottom: 1rem;
+  }
 }
 
 .article {
