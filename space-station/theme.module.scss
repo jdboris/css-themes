@@ -615,7 +615,7 @@ a[rel="author"] {
   svg {
     position: initial;
     vertical-align: middle;
-    margin-top: -0.1em;
+    margin-top: -0.25em;
   }
 }
 
@@ -1029,8 +1029,14 @@ input[type="range"] {
   }
 }
 
+// COLORS
+
 .grayed {
   filter: brightness(40%);
+}
+
+.blue {
+  background-color: #0075ff;
 }
 
 .map {
