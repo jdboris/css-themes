@@ -1,6 +1,7 @@
 @use "landing-page";
 @use "booking-page";
 @use "pos-page";
+@use "game-page";
 
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Genos:wght@700&display=swap");
@@ -25,7 +26,7 @@ $max-content-width: 1280px;
 .root {
   min-height: 100%;
 
-  font-family: "Kanit";
+  font-family: "Kanit", sans-serif;
   background: rgb(25, 20, 31);
 
   & > main {
@@ -262,6 +263,14 @@ img {
   max-width: 100%;
 }
 
+address {
+  font-style: initial;
+
+  * {
+    white-space: nowrap;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -469,7 +478,19 @@ textarea {
 }
 
 ::placeholder {
+  font-family: "Kanit", sans-serif;
   font-style: italic;
+}
+
+.alt::placeholder {
+  // NOTE: react-datepicker hijacks the display property with inline !important
+  visibility: hidden;
+  font-style: initial;
+}
+
+.alt:focus::placeholder {
+  visibility: visible;
+  font-style: initial;
 }
 
 fieldset {
@@ -721,6 +742,7 @@ section {
 
       > li {
         flex-basis: 0;
+        flex-grow: 1;
       }
     }
   }
@@ -861,8 +883,16 @@ section {
   }
 
   > main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
     padding: 2em;
     background: #060606;
+
+    svg {
+      font-size: 0.8em;
+    }
   }
 }
 
@@ -1013,14 +1043,15 @@ input[type="range"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1em;
+  padding: 1em;
 
   &::before,
   &::after {
     content: "";
-    height: 2px;
-    min-width: 6em;
-    background: indianred;
+    height: 1px;
+    width: 6em;
+    // background: indianred;
+    background: #ffffff21;
     margin: 0 0.4em;
   }
 }
@@ -1044,8 +1075,18 @@ input[type="range"] {
   filter: brightness(40%);
 }
 
-.blue {
+button.blue,
+.button.blue {
   background-color: #0075ff;
+}
+
+button.orange,
+.button.orange {
+  background-color: #ff5200;
+}
+
+.green {
+  color: #77ff77;
 }
 
 .map {
@@ -1077,6 +1118,7 @@ input[type="range"] {
         white-space: nowrap;
         flex-wrap: wrap;
         line-height: 1em;
+        align-content: flex-start;
 
         &::before {
           content: "";
@@ -1092,7 +1134,8 @@ input[type="range"] {
       }
 
       ~ *:hover {
-        border: 1px solid rgba(255, 255, 255, 0.37);
+        border: 1px solid #00ffd0;
+        box-shadow: 0em 0em 1em black;
       }
 
       &:checked ~ * {

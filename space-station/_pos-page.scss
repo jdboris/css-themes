@@ -1,7 +1,73 @@
 .posPage {
+  gap: 25em;
+
+  * {
+    scroll-margin: 0;
+  }
+
+  .landingPage {
+    .button {
+      font-size: 3em;
+      width: 10em;
+      justify-content: center;
+    }
+  }
+
+  .checkinPage {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    main {
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 780px;
+        gap: 1em;
+
+        fieldset {
+          flex-wrap: nowrap;
+
+          label {
+            font-size: 3em;
+          }
+
+          input {
+            width: 100%;
+            max-width: calc(100vw - 1em);
+
+            &.alt {
+              border-color: #fff700;
+            }
+          }
+        }
+
+        .error {
+          text-align: center;
+          font-size: 1.8em;
+        }
+      }
+    }
+
+    button {
+      font-size: 2em;
+      width: 100%;
+    }
+
+    .sideLines {
+      padding-top: 0.6em;
+      padding-bottom: 0;
+      max-width: 100%;
+    }
+  }
+
   h1,
   .h1 {
     text-align: center;
     font-size: 5em;
+    margin: 0;
   }
 }

@@ -2,7 +2,7 @@
   padding: 0 0.5rem;
 
   form {
-    gap: 1em;
+    gap: 1.3em;
 
     em {
       position: absolute;
@@ -147,33 +147,64 @@
       }
 
       .map {
-        flex-basis: 645px;
+        flex-basis: 495px;
         flex-grow: 1;
 
         em {
-          max-width: 37%;
-          padding: 0 0.3em;
+          transform: translateY(-85%);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.2em;
         }
       }
 
       aside {
         display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
+        flex-wrap: wrap;
+        flex-grow: 10;
+        align-items: flex-start;
+        gap: 1rem;
         text-align: center;
         font-size: 1.2em;
 
         position: relative;
         flex-basis: 330px;
-        margin: auto;
 
-        fieldset {
+        span {
+          white-space: nowrap;
+        }
+
+        > div {
           display: flex;
-          flex-direction: column;
+          flex-wrap: wrap;
+          flex-basis: 0;
+          flex-grow: 1;
+
+          gap: 0.6rem;
+
+          label {
+            flex-grow: 1;
+          }
+        }
+
+        > fieldset {
+          display: flex;
           gap: 0.5rem;
+          flex-grow: 1;
+          flex-basis: 270px;
+          align-items: flex-start;
 
           label:last-of-type {
             margin-bottom: 1em;
+          }
+
+          label {
+            flex-basis: 200px;
+            flex-grow: 1;
+          }
+
+          input {
+            min-width: 200px;
           }
         }
 
@@ -187,7 +218,6 @@
           flex-direction: column;
           color: gray;
           line-height: 1;
-          flex-grow: 1;
 
           > span {
             font-size: 1.5em;
