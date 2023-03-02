@@ -24,6 +24,9 @@ body {
 $max-content-width: 1280px;
 
 .root {
+  display: flex;
+  flex-direction: column;
+
   min-height: 100%;
 
   font-family: "Kanit", sans-serif;
