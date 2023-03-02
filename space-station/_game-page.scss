@@ -3,7 +3,8 @@
     width: 100%;
   }
 
-  li {
+  .games > li {
     flex-basis: 350px;
+    flex-grow: 1;
   }
 }

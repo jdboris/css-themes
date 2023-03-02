@@ -32,6 +32,10 @@ $max-content-width: 1280px;
   font-family: "Kanit", sans-serif;
   background: rgb(25, 20, 31);
 
+  > * {
+    width: 100%;
+  }
+
   & > main {
     display: flex;
     flex-direction: column;
@@ -745,7 +749,6 @@ section {
 
       > li {
         flex-basis: 0;
-        flex-grow: 1;
       }
     }
   }
