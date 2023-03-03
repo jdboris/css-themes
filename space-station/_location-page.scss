@@ -1,0 +1,11 @@
+.locationPage {
+  address {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  time {
+    font-size: 2em;
+  }
+}

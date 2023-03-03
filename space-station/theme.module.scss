@@ -1,4 +1,5 @@
 @use "landing-page";
+@use "location-page";
 @use "booking-page";
 @use "pos-page";
 @use "game-page";
@@ -281,7 +282,7 @@ img {
 address {
   font-style: initial;
 
-  * {
+  span {
     white-space: nowrap;
   }
 }
@@ -1103,6 +1104,10 @@ button.orange,
   background-color: #ff5200;
 }
 
+.tan {
+  color: #e3a22c;
+}
+
 .green {
   color: #77ff77;
 }
@@ -1132,7 +1137,7 @@ button.orange,
         border: 1px solid transparent;
         padding: 0.5em;
 
-        font-size: min(1.3em, 3.6vw);
+        font-size: min(1.3em, 3.3vw);
         white-space: nowrap;
         flex-wrap: wrap;
         line-height: 1em;
@@ -1143,6 +1148,7 @@ button.orange,
           box-sizing: border-box;
           position: relative;
           display: inline-flex;
+          font-size: 1.3em;
           width: 1em;
           height: 1em;
           border: 2px solid #00ffd0;
