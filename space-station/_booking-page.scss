@@ -1,12 +1,16 @@
 .bookingPage {
   padding: 0 0.5rem;
 
+  > header {
+    padding-top: 2em;
+  }
+
   form {
     gap: 1.3em;
 
     em {
       position: absolute;
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-style: italic;
       opacity: 0.6;
     }
