@@ -25,129 +25,137 @@
       opacity: 0.6;
     }
 
-    > header {
+    .startTimeFields {
       display: flex;
-      flex-direction: column;
-      width: 100%;
-      font-size: 3em;
-      padding: 0.1em;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      row-gap: 0;
 
-      fieldset {
-        display: flex;
+      font-size: 1.9em;
+
+      ::placeholder {
+        visibility: visible;
+        font-size: 0.98em;
+      }
+
+      > label {
+        display: inline-flex;
         align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-        row-gap: 0;
+        flex-direction: initial;
+        color: white;
+        flex-basis: initial;
+        flex-grow: initial;
+        gap: 0;
+        // NOTE: Required for react-datepicker position
+        position: relative;
+        border-bottom: 2px solid #00ffd0;
+        line-height: initial;
 
-        > label {
-          display: inline-flex;
-          align-items: center;
-          gap: 0;
-          // NOTE: Required for react-datepicker position
-          position: relative;
-          border-bottom: 2px solid #00ffd0;
-
-          svg {
-            position: initial;
-            font-size: 0.7em;
-            margin: 0;
-            margin-right: 0.2em;
-            margin-top: 5px;
-            cursor: pointer;
-          }
-
-          input {
-            border-bottom: none;
-          }
-        }
-
-        button {
-          font-size: 2rem;
-          padding: 0.5em;
+        svg {
+          position: initial;
+          font-size: 0.9em;
           margin: 0;
+          margin-right: 0.2em;
+          margin-top: 5px;
+          cursor: pointer;
         }
 
-        input.medium {
-          max-width: 6.9em;
+        input {
+          border-bottom: none;
+          min-width: initial;
+        }
+      }
+
+      button {
+        font-size: 2rem;
+        padding: 0.5em;
+        margin: 0;
+      }
+
+      input.medium {
+        // NOTE: don't use em's
+        width: 255px;
+      }
+
+      input.small {
+        // NOTE: don't use em's
+        width: 127px;
+      }
+
+      input[type="text"] {
+        margin-bottom: 0;
+        color: #f0f0f0;
+      }
+
+      input[type="time"] {
+        &::-webkit-calendar-picker-indicator {
+          display: none;
+        }
+      }
+
+      input[type="date"] {
+        max-width: 7em;
+
+        &::calendar-picker-indicator {
+          display: none !important;
         }
 
-        input.small {
-          max-width: 3.4em;
+        &::-webkit-calendar-picker-indicator {
+          filter: contrast(0%) brightness(350%);
+          cursor: pointer;
+          max-width: 0.7em;
+          background-position: center;
         }
+      }
 
-        input[type="text"] {
-          font-size: min(8vw, 3rem);
-          margin-bottom: 0;
-          color: #f0f0f0;
-        }
+      input[type="date"],
+      input[type="time"] {
+        background: initial;
+        border: initial;
+        padding: 0;
+        border-radius: 5px;
+        line-height: 1;
+        margin: 5px;
+        text-align: center;
 
-        input[type="time"] {
-          &::-webkit-calendar-picker-indicator {
-            display: none;
-          }
-        }
-
-        input[type="date"] {
-          max-width: 7em;
-
-          &::calendar-picker-indicator {
-            display: none !important;
-          }
-
-          &::-webkit-calendar-picker-indicator {
-            filter: contrast(0%) brightness(350%);
-            cursor: pointer;
-            max-width: 0.7em;
-            background-position: center;
-          }
-        }
-
-        input[type="date"],
-        input[type="time"] {
-          background: initial;
-          border: initial;
-          padding: 0;
-          border-radius: 5px;
-          line-height: 1;
-          margin: 5px;
-          text-align: center;
-
-          /* 
+        /* 
           The naming convention for the hour, minute, second, and am/pm field is
           `-webkit-datetime-edit-{field}-field` 
           */
-          // /* Hour */
-          // ::-webkit-datetime-edit-hour-field {
-          //   background-color: #f2f4f5;
-          //   border-radius: 15%;
-          //   padding: 19px 13px;
-          // }
+        // /* Hour */
+        // ::-webkit-datetime-edit-hour-field {
+        //   background-color: #f2f4f5;
+        //   border-radius: 15%;
+        //   padding: 19px 13px;
+        // }
 
-          // /* Minute */
-          // ::-webkit-datetime-edit-minute-field {
-          //   background-color: #f2f4f5;
-          //   border-radius: 15%;
-          //   padding: 19px 13px;
-          // }
+        // /* Minute */
+        // ::-webkit-datetime-edit-minute-field {
+        //   background-color: #f2f4f5;
+        //   border-radius: 15%;
+        //   padding: 19px 13px;
+        // }
 
-          // /* AM/PM */
-          // ::-webkit-datetime-edit-ampm-field {
-          //   background-color: #7155d3;
-          //   border-radius: 15%;
-          //   color: #fff;
-          //   padding: 19px 13px;
-          // }
+        // /* AM/PM */
+        // ::-webkit-datetime-edit-ampm-field {
+        //   background-color: #7155d3;
+        //   border-radius: 15%;
+        //   color: #fff;
+        //   padding: 19px 13px;
+        // }
 
-          // /* 'X' button for resetting/clearing time */
-          // ::-webkit-clear-button {
-          //   display: none;
-          // }
+        // /* 'X' button for resetting/clearing time */
+        // ::-webkit-clear-button {
+        //   display: none;
+        // }
 
-          // /* Up/Down arrows for incrementing/decrementing the value */
-          // ::-webkit-inner-spin-button {
-          //   display: none;
-          // }
-        }
+        // /* Up/Down arrows for incrementing/decrementing the value */
+        // ::-webkit-inner-spin-button {
+        //   display: none;
+        // }
       }
     }
 
@@ -156,10 +164,6 @@
       flex-wrap: wrap;
       gap: 1em;
       width: 100%;
-
-      button {
-        background: #0075ff;
-      }
 
       .map {
         display: flex;
@@ -177,10 +181,9 @@
       aside {
         display: flex;
         flex-wrap: wrap;
-        flex-grow: 10;
+        flex-grow: 4;
         align-items: flex-start;
         gap: 1rem;
-        text-align: center;
         font-size: 1.2em;
 
         position: relative;
@@ -193,13 +196,24 @@
         > div {
           display: flex;
           flex-wrap: wrap;
-          flex-basis: 0;
+          flex-basis: 170px;
           flex-grow: 1;
+          max-width: 280px;
+          margin: auto;
 
           gap: 0.6rem;
 
           label {
             flex-grow: 1;
+            text-align: start;
+          }
+
+          button.red {
+            width: auto;
+          }
+
+          button {
+            width: 100%;
           }
         }
 
@@ -210,22 +224,40 @@
           flex-basis: 270px;
           align-items: flex-start;
 
-          label:last-of-type {
-            margin-bottom: 1em;
-          }
-
           label {
             flex-basis: 200px;
             flex-grow: 1;
           }
 
+          label.duration {
+            flex-basis: initial;
+            flex-grow: initial;
+            margin-left: auto;
+          }
+
           input {
             min-width: 200px;
+          }
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3em;
+            width: auto;
+            margin-left: auto;
+          }
+
+          button:last-child {
+            margin-top: 1em;
           }
         }
 
         button {
-          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.3em;
         }
 
         label {

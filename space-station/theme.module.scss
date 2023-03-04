@@ -173,6 +173,16 @@ $max-content-width: 1280px;
         }
       }
     }
+
+    &.minimal {
+      visibility: hidden;
+      pointer-events: none;
+
+      button {
+        visibility: initial;
+        pointer-events: initial;
+      }
+    }
   }
 
   & > footer {
@@ -661,6 +671,7 @@ a[rel="author"] {
   font-weight: 200;
   opacity: 1;
   line-height: 1em;
+  font-style: initial;
 
   svg {
     position: initial;
@@ -1105,6 +1116,11 @@ button.blue,
 button.orange,
 .button.orange {
   background-color: #ff5200;
+}
+
+button.red,
+.button.red {
+  background-color: darkred;
 }
 
 .tan {
