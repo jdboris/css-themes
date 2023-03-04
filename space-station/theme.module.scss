@@ -80,7 +80,7 @@ $max-content-width: 1280px;
       width: 100%;
       justify-content: center;
       overflow: hidden;
-      height: 5rem;
+      height: 4.3rem;
 
       max-width: $max-content-width;
 
@@ -281,6 +281,8 @@ img {
 
 address {
   font-style: initial;
+  justify-content: center;
+  text-align: center;
 
   span {
     white-space: nowrap;
@@ -313,6 +315,7 @@ h6,
 .h1,
 h1 {
   font-size: 4rem;
+  text-align: center;
 }
 
 .h2,
