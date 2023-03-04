@@ -178,9 +178,11 @@ $max-content-width: 1280px;
       visibility: hidden;
       pointer-events: none;
 
-      button {
+      button,
+      .button {
         visibility: initial;
         pointer-events: initial;
+        margin: 0;
       }
     }
   }
@@ -398,7 +400,7 @@ label {
   > small {
     position: absolute;
     left: 0;
-    bottom: 0.4em;
+    bottom: 0.5em;
     min-width: 100%;
     margin: auto;
     font-size: 1em;
@@ -415,7 +417,7 @@ label {
   > input:not([value=""]) ~ small,
   > input:not(:placeholder-shown) ~ small {
     font-size: 0.7em;
-    bottom: 1.7em;
+    bottom: 1.9em;
   }
 }
 
@@ -460,7 +462,8 @@ input.alt {
   border-bottom: 2px solid #00ffd0;
   border-radius: 0;
   padding: 0;
-  padding-top: 0.8rem;
+  padding-top: 1.2rem;
+  margin-bottom: 0.2rem;
 }
 
 input:disabled,
@@ -684,17 +687,16 @@ label .error {
   position: absolute;
   bottom: 0;
   font-size: 0.8rem;
+  margin-bottom: -0.8rem;
 
   & ~ * input,
   & ~ input {
     border-color: red;
-    margin-bottom: 1rem;
   }
 
   & ~ * input ~ small,
   & ~ input ~ small {
     color: red;
-    margin-bottom: 1rem;
   }
 }
 

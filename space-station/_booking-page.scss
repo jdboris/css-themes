@@ -34,7 +34,7 @@
       gap: 1rem;
       row-gap: 0;
 
-      font-size: 1.9em;
+      font-size: max(1.9em, 2.3vw);
 
       ::placeholder {
         visibility: visible;
@@ -76,13 +76,11 @@
       }
 
       input.medium {
-        // NOTE: don't use em's
-        width: 255px;
+        width: 7em;
       }
 
       input.small {
-        // NOTE: don't use em's
-        width: 127px;
+        width: 3.5em;
       }
 
       input[type="text"] {
