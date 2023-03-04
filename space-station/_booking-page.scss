@@ -246,6 +246,14 @@
             margin-left: auto;
           }
 
+          .row:last-of-type {
+            .error {
+              text-align: center;
+              margin-top: 0.5rem;
+              margin-bottom: -0.8rem;
+            }
+          }
+
           button:last-child {
             margin-top: 1em;
           }
