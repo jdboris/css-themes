@@ -38,6 +38,7 @@
 
       ::placeholder {
         visibility: visible;
+        opacity: 0.6;
         font-size: 0.98em;
       }
 
@@ -59,7 +60,7 @@
           font-size: 0.9em;
           margin: 0;
           margin-right: 0.2em;
-          margin-top: 5px;
+          margin-top: 0.3em;
           cursor: pointer;
         }
 

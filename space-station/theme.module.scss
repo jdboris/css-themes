@@ -519,11 +519,13 @@ textarea {
   // NOTE: react-datepicker hijacks the display property with inline !important
   visibility: hidden;
   font-style: initial;
+  opacity: 0;
 }
 
 .alt:focus::placeholder {
   visibility: visible;
   font-style: initial;
+  opacity: 0.6;
 }
 
 fieldset {
