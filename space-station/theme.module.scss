@@ -1112,6 +1112,19 @@ input[type="range"] {
   filter: brightness(40%);
 }
 
+.tan {
+  color: #e3a22c;
+}
+
+.green {
+  color: #77ff77;
+}
+
+.red:not(button),
+.red:not(.button) {
+  color: red;
+}
+
 button.blue,
 .button.blue {
   background-color: #0075ff;
@@ -1125,14 +1138,6 @@ button.orange,
 button.red,
 .button.red {
   background-color: darkred;
-}
-
-.tan {
-  color: #e3a22c;
-}
-
-.green {
-  color: #77ff77;
 }
 
 .map {
