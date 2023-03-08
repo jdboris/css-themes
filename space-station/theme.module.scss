@@ -52,6 +52,14 @@ $max-content-width: 1280px;
       margin-left: auto;
       margin-right: auto;
       padding: 1em;
+
+      &:nth-of-type(even) {
+        background: #120d16;
+        padding: 1em calc((100% - 1280px) / 2);
+        padding-bottom: 3em;
+        max-width: initial;
+        margin: 0;
+      }
     }
   }
 
