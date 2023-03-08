@@ -1120,8 +1120,7 @@ input[type="range"] {
   color: #77ff77;
 }
 
-.red:not(button),
-.red:not(.button) {
+.red:not(button):not(.button) {
   color: red;
 }
 
