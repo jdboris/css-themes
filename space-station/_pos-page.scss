@@ -1,5 +1,6 @@
 .posPage {
   gap: 25em;
+  padding-bottom: 0 !important;
 
   * {
     scroll-margin: 0;
@@ -71,5 +72,9 @@
     text-align: center;
     font-size: 5em;
     margin: 0;
+  }
+
+  & + footer {
+    display: none !important;
   }
 }
