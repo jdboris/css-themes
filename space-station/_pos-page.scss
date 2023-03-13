@@ -6,6 +6,11 @@
     scroll-margin: 0;
   }
 
+  > section:nth-of-type(odd) {
+    background: initial !important;
+    padding: 0;
+  }
+
   .landingPage {
     justify-content: center;
 
