@@ -53,7 +53,7 @@ $max-content-width: 1280px;
       margin-right: auto;
       padding: 1em;
 
-      &:nth-of-type(even) {
+      &:nth-of-type(odd) {
         background: #120d16;
         padding: 1em calc((100% - 1280px) / 2);
         padding-bottom: 3em;
