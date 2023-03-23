@@ -52,14 +52,18 @@ $max-content-width: 1280px;
       width: 100%;
       margin-left: auto;
       margin-right: auto;
-      padding: 1em;
+      padding: 3em 1em;
 
       &:nth-of-type(odd) {
         background: #120d16;
-        padding: 1em calc((100% - 1280px) / 2);
-        padding-bottom: 3em;
+        padding: 3em calc((100% - 1280px) / 2);
         max-width: initial;
         margin: 0;
+      }
+
+      h1,
+      .h1 {
+        margin-top: 0;
       }
     }
   }
@@ -193,6 +197,17 @@ $max-content-width: 1280px;
         pointer-events: initial;
         margin: 0;
       }
+    }
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
     }
   }
 
@@ -781,12 +796,16 @@ section {
       display: flex;
       flex-wrap: wrap;
       list-style: none;
-      gap: 1.2em;
       padding: 0;
       margin: 0;
 
       > li {
+        display: flex;
         flex-basis: 0;
+
+        > * {
+          margin: 0.4em;
+        }
       }
     }
   }
@@ -806,7 +825,7 @@ section {
   background: #09060b;
   box-shadow: 0 0 4px black;
   flex-direction: column;
-  min-width: 290px;
+  min-width: 280px;
   min-height: 160px;
   flex-grow: 1;
 

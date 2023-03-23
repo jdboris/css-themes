@@ -3,7 +3,7 @@
   padding-bottom: 0 !important;
 
   * {
-    scroll-margin: 0;
+    scroll-margin: -3.5em;
   }
 
   > section:nth-of-type(odd) {
@@ -41,6 +41,7 @@
 
           label {
             font-size: 3em;
+            width: 100%;
           }
 
           input {
@@ -64,6 +65,7 @@
     button {
       font-size: 2em;
       width: 100%;
+      margin-top: 1em;
     }
 
     .sideLines {

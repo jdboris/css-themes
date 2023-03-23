@@ -1,4 +1,8 @@
 .locationPage {
+  a {
+    display: initial;
+  }
+
   address {
     display: flex;
     flex-wrap: wrap;
@@ -7,6 +11,8 @@
   }
 
   time {
-    font-size: 2em;
+    font-size: 4.5em;
+    font-weight: 500;
+    line-height: 1;
   }
 }
