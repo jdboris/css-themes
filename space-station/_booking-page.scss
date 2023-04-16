@@ -42,7 +42,8 @@
         font-size: 0.98em;
       }
 
-      > label {
+      > label,
+      > .label {
         display: inline-flex;
         align-items: center;
         flex-direction: initial;
@@ -202,7 +203,8 @@
 
           gap: 0.6rem;
 
-          label {
+          label,
+          .label {
             flex-grow: 1;
             text-align: start;
           }
@@ -224,12 +226,14 @@
           flex-basis: 270px;
           align-items: flex-start;
 
-          label {
+          label,
+          .label {
             flex-basis: 200px;
             flex-grow: 1;
           }
 
-          label.duration {
+          label.duration,
+          .label.duration {
             flex-basis: initial;
             flex-grow: initial;
             margin-left: auto;
@@ -268,7 +272,8 @@
           gap: 0.3em;
         }
 
-        label {
+        label,
+        .label {
           position: relative;
           display: flex;
           flex-direction: column;

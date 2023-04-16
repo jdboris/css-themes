@@ -44,7 +44,8 @@
         fieldset {
           flex-wrap: nowrap;
 
-          label {
+          label,
+          .label {
             font-size: 3em;
             width: 100%;
           }
@@ -89,7 +90,7 @@
 
   & ~ * .modal {
     font-size: 1.7em;
-    max-width: 570px;
+    max-width: 550px;
 
     ul {
       line-height: 1;

@@ -219,24 +219,56 @@ $max-content-width: 1280px;
       flex-wrap: wrap;
       padding: 0;
       margin: 0;
-      justify-content: center;
+      justify-content: flex-end;
     }
   }
 
   & > footer {
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     background: rgb(22 22 22);
     color: grey;
     padding-top: 3em;
     padding-bottom: 3em;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     flex-wrap: wrap;
 
+    padding-left: calc((100% - $max-content-width) / 2);
+    padding-right: calc((100% - $max-content-width) / 2);
+
     > * {
-      max-width: 1280px;
       padding: 1em;
-      margin: auto;
+    }
+
+    address {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      @media screen and (max-width: 700px) {
+        max-width: 220px;
+      }
+
+      svg {
+        width: 1em;
+        color: grey;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        column-gap: 0.3em;
+      }
+
+      a {
+        flex-wrap: wrap;
+        column-gap: 0.3em;
+      }
     }
 
     nav {
@@ -257,6 +289,18 @@ $max-content-width: 1280px;
 
         transition: rotate 0.1s;
       }
+
+      ul {
+        @media screen and (max-width: 700px) {
+          justify-content: center;
+        }
+      }
+    }
+
+    small {
+      width: 100%;
+      text-align: center;
+      font-size: 1em;
     }
   }
 
@@ -283,7 +327,8 @@ $max-content-width: 1280px;
     max-width: 300px;
     text-align: center;
 
-    label {
+    label,
+    .label {
       width: 100%;
 
       input {
@@ -399,7 +444,8 @@ $max-content-width: 1280px;
     font-size: 0.9rem;
   }
 
-  label {
+  label,
+  .label {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -736,20 +782,23 @@ $max-content-width: 1280px;
     }
   }
 
-  label .error {
-    position: absolute;
-    bottom: 0;
-    font-size: 0.8rem;
-    margin-bottom: -0.8rem;
+  label,
+  .label {
+    .error {
+      position: absolute;
+      bottom: 0;
+      font-size: 0.8rem;
+      margin-bottom: -0.8rem;
 
-    & ~ * input,
-    & ~ input {
-      border-color: red;
-    }
+      & ~ * input,
+      & ~ input {
+        border-color: red;
+      }
 
-    & ~ * input ~ small,
-    & ~ input ~ small {
-      color: red;
+      & ~ * input ~ small,
+      & ~ input ~ small {
+        color: red;
+      }
     }
   }
 
@@ -954,6 +1003,7 @@ $max-content-width: 1280px;
     font-size: 0.9em;
     border-radius: 2em;
     white-space: nowrap;
+    margin: 0;
   }
 
   .paddingContainer {
@@ -1206,7 +1256,8 @@ $max-content-width: 1280px;
       width: 100%;
     }
 
-    label {
+    label,
+    .label {
       position: absolute;
       display: inline-flex;
       cursor: pointer;
