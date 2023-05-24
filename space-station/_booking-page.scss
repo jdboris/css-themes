@@ -159,110 +159,87 @@
       }
     }
 
-    > main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    width: 100%;
+
+    .map {
+      display: flex;
+      flex-basis: 495px;
+      flex-grow: 1;
+
+      em {
+        transform: translateY(-85%);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2em;
+      }
+    }
+
+    aside {
       display: flex;
       flex-wrap: wrap;
-      gap: 1em;
-      width: 100%;
+      flex-grow: 4;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1.2em;
 
-      .map {
+      position: relative;
+      flex-basis: 330px;
+
+      span {
+        white-space: nowrap;
+      }
+
+      > div {
         display: flex;
-        flex-basis: 495px;
+        flex-wrap: wrap;
+        flex-basis: 170px;
         flex-grow: 1;
+        max-width: 280px;
+        margin: auto;
 
-        em {
-          transform: translateY(-85%);
-          display: inline-flex;
-          align-items: center;
-          gap: 0.2em;
+        gap: 0.6rem;
+
+        label,
+        .label {
+          flex-grow: 1;
+          text-align: start;
+        }
+
+        button.red {
+          width: auto;
+          align-self: center;
+        }
+
+        button {
+          width: 100%;
         }
       }
 
-      aside {
+      > fieldset {
         display: flex;
-        flex-wrap: wrap;
-        flex-grow: 4;
+        gap: 0.5rem;
+        flex-grow: 1;
+        flex-basis: 270px;
         align-items: flex-start;
-        gap: 1rem;
-        font-size: 1.2em;
 
-        position: relative;
-        flex-basis: 330px;
-
-        span {
-          white-space: nowrap;
+        label,
+        .label {
+          flex-basis: 200px;
+          flex-grow: 1;
         }
 
-        > div {
-          display: flex;
-          flex-wrap: wrap;
-          flex-basis: 170px;
-          flex-grow: 1;
-          max-width: 280px;
-          margin: auto;
-
-          gap: 0.6rem;
-
-          label,
-          .label {
-            flex-grow: 1;
-            text-align: start;
-          }
-
-          button.red {
-            width: auto;
-            align-self: center;
-          }
-
-          button {
-            width: 100%;
-          }
+        label.duration,
+        .label.duration {
+          flex-basis: initial;
+          flex-grow: initial;
+          margin-left: auto;
         }
 
-        > fieldset {
-          display: flex;
-          gap: 0.5rem;
-          flex-grow: 1;
-          flex-basis: 270px;
-          align-items: flex-start;
-
-          label,
-          .label {
-            flex-basis: 200px;
-            flex-grow: 1;
-          }
-
-          label.duration,
-          .label.duration {
-            flex-basis: initial;
-            flex-grow: initial;
-            margin-left: auto;
-          }
-
-          input {
-            min-width: 200px;
-          }
-
-          button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.3em;
-            width: auto;
-            margin-left: auto;
-          }
-
-          .row:last-of-type {
-            .error {
-              text-align: center;
-              margin-top: 0.5rem;
-              margin-bottom: -0.8rem;
-            }
-          }
-
-          button:last-child {
-            margin-top: 1em;
-          }
+        input {
+          min-width: 200px;
         }
 
         button {
@@ -270,31 +247,52 @@
           justify-content: center;
           align-items: center;
           gap: 0.3em;
+          width: auto;
+          margin-left: auto;
         }
 
-        label,
-        .label {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          color: gray;
-
-          > span {
-            font-size: 1.5em;
-            color: white;
-          }
-
-          input {
-            width: 100%;
-          }
-
-          > small {
-            text-align: start;
-          }
-
+        .row:last-of-type {
           .error {
-            text-align: start;
+            text-align: center;
+            margin-top: 0.5rem;
+            // margin-bottom: -0.8rem;
           }
+        }
+
+        button:last-child {
+          margin-top: 1em;
+        }
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3em;
+      }
+
+      label,
+      .label {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        color: gray;
+
+        > span {
+          font-size: 1.5em;
+          color: white;
+        }
+
+        input {
+          width: 100%;
+        }
+
+        > small {
+          text-align: start;
+        }
+
+        .error {
+          text-align: start;
         }
       }
     }

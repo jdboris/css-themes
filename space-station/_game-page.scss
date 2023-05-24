@@ -6,6 +6,10 @@
   .games > li {
     flex-basis: 300px;
     flex-grow: 1;
+
+    > * {
+      margin: 0.4em;
+    }
   }
 
   .card {
