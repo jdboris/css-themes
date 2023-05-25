@@ -32,11 +32,62 @@ body {
         display: flex;
         flex-direction: column;
 
-        a {
+        a,
+        summary {
           padding: 0.3rem 1rem;
+
+          > :first-child {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.2em;
+          }
 
           &:hover {
             background: rgb(42, 45, 46);
+          }
+        }
+
+        summary {
+          cursor: pointer;
+          list-style: none;
+
+          &::marker {
+            display: none;
+          }
+
+          &::before {
+            content: " ";
+            position: relative;
+            border: solid;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 0 7px 7px 0;
+            border-radius: 2px;
+            transform: rotate(-45deg);
+            margin-left: 0.13rem;
+            margin-right: 0.7rem;
+          }
+        }
+
+        details {
+          &[open] summary::before {
+            transform: rotate(45deg);
+            left: 2px;
+            top: -2px;
+          }
+
+          nav {
+            margin-left: 0.3rem;
+
+            a {
+              &::before {
+                content: " ";
+                border-left: 1px solid #585858;
+                margin-top: -4px;
+                margin-bottom: -4px;
+              }
+            }
           }
         }
       }
@@ -75,6 +126,7 @@ body {
 
   .fa-house {
     color: rgb(0, 85, 143);
+    font-size: 0.9em;
   }
 
   button,
