@@ -19,7 +19,7 @@ body {
 
     > aside {
       background: rgb(37, 37, 38);
-      min-width: 15.5em;
+      min-width: 12em;
 
       > header {
         text-transform: uppercase;
@@ -75,5 +75,23 @@ body {
 
   .fa-house {
     color: rgb(0, 85, 143);
+  }
+
+  button,
+  .button {
+    background: rgb(14, 99, 156);
+    color: white;
+    padding: 1em 1.3em;
+    border: none;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  button.orange,
+  .button.orange {
+    background: #ef8500;
   }
 }
