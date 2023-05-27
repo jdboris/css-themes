@@ -1,5 +1,7 @@
 @import url("@vscode/codicons/dist/codicon.css");
 
+$aside-width: 12em;
+
 html,
 body {
   font-size: 14px;
@@ -17,41 +19,13 @@ body {
   font-family: Consolas, sans-serif;
 
   > main {
+    display: flex;
     height: 100%;
 
-    > aside {
-      background: rgb(37, 37, 38);
-      min-width: 12em;
-      user-select: none;
-
-      > header {
-        text-transform: uppercase;
-        padding: 1rem;
-        font-size: 0.9em;
-        color: rgb(184, 184, 184);
-      }
-
-      nav {
-        display: flex;
-        flex-direction: column;
-
-        a,
-        summary {
-          padding: 0.3rem 1rem;
-
-          > :first-child {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 1.2em;
-          }
-
-          &:hover {
-            background: rgb(42, 45, 46);
-          }
-        }
-
-        summary {
+    > nav {
+      > details {
+        > summary {
+          display: inline-flex;
           cursor: pointer;
           list-style: none;
 
@@ -59,44 +33,107 @@ body {
             display: none;
           }
 
-          &::before {
-            content: " ";
-            position: relative;
-            border: solid;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 0 7px 7px 0;
-            border-radius: 2px;
-            transform: rotate(-45deg);
-            margin-left: 0.13rem;
-            margin-right: 0.7rem;
+          > i {
+            font-size: 1.71rem !important;
+            padding: 0.85rem;
+            padding-left: calc(0.9rem - 2px);
+            border-left: 2px solid transparent;
           }
         }
 
-        details {
-          &[open] summary::before {
-            transform: rotate(45deg);
-            left: 2px;
-            top: -2px;
+        &[open] {
+          margin-right: $aside-width;
+
+          > summary {
+            > i {
+              color: white;
+              border-left-color: white;
+            }
+          }
+        }
+
+        > aside {
+          display: inline;
+          position: absolute;
+          top: 0;
+          background: rgb(37, 37, 38);
+          min-width: $aside-width;
+          user-select: none;
+          height: 100%;
+
+          > header {
+            text-transform: uppercase;
+            padding: 1rem;
+            font-size: 0.9em;
+            color: rgb(184, 184, 184);
           }
 
           nav {
-            margin-left: 0.3rem;
+            display: flex;
+            flex-direction: column;
 
-            a {
+            a,
+            summary {
+              padding: 0.3rem 1rem;
+
+              > :first-child {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 1.2em;
+              }
+
+              &:hover {
+                background: rgb(42, 45, 46);
+              }
+            }
+
+            summary {
+              cursor: pointer;
+              list-style: none;
+
+              &::marker {
+                display: none;
+              }
+
               &::before {
                 content: " ";
-                border-left: 1px solid #585858;
-                margin-top: -4px;
-                margin-bottom: -4px;
+                position: relative;
+                border: solid;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 0 7px 7px 0;
+                border-radius: 2px;
+                transform: rotate(-45deg);
+                margin-left: 0.13rem;
+                margin-right: 0.7rem;
+              }
+            }
+
+            details {
+              &[open] summary::before {
+                transform: rotate(45deg);
+                left: 2px;
+                top: -2px;
+              }
+
+              nav {
+                margin-left: 0.3rem;
+
+                a {
+                  &::before {
+                    content: " ";
+                    border-left: 1px solid #585858;
+                    margin-top: -4px;
+                    margin-bottom: -4px;
+                  }
+                }
               }
             }
           }
         }
       }
     }
-
-    display: flex;
   }
 
   a {
