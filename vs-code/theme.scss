@@ -17,7 +17,7 @@ body {
 
 body {
   background: rgb(51, 51, 51);
-  font-family: Consolas, sans-serif;
+  font-family: Segoe WPC, Segoe UI, sans-serif;
 
   > main {
     display: flex;
@@ -80,8 +80,8 @@ body {
 
           > header {
             text-transform: uppercase;
-            padding: 1rem;
-            font-size: 0.9em;
+            padding: 0.8rem 1.3rem;
+            font-size: 0.8em;
             color: rgb(184, 184, 184);
           }
 
@@ -91,7 +91,8 @@ body {
 
             a,
             summary {
-              padding: 0.3rem 1rem;
+              padding: 0.2rem 1rem;
+              width: 100%;
 
               > :first-child {
                 display: inline-flex;
@@ -118,24 +119,16 @@ body {
               }
 
               &::before {
-                content: " ";
-                position: relative;
-                border: solid;
-                border-width: 0 2px 2px 0;
-                display: inline-block;
-                padding: 0 7px 7px 0;
-                border-radius: 2px;
-                transform: rotate(-45deg);
-                margin-left: 0.13rem;
-                margin-right: 0.7rem;
+                content: "\eab6";
+                font-family: "codicon";
+                vertical-align: middle;
+                font-size: 1.2rem;
               }
             }
 
             details {
               &[open] summary::before {
-                transform: rotate(45deg);
-                left: 2px;
-                top: -2px;
+                content: "\eab4";
               }
 
               nav {
@@ -147,6 +140,7 @@ body {
                     border-left: 1px solid #585858;
                     margin-top: -4px;
                     margin-bottom: -4px;
+                    align-self: stretch;
                   }
                 }
               }
@@ -157,9 +151,11 @@ body {
     }
   }
 
-  a {
+  a,
+  nav > details > summary {
     display: inline-flex;
-    gap: 0.4em;
+    gap: 0.3em;
+    align-items: center;
     text-decoration: none;
     color: inherit;
   }
@@ -185,6 +181,8 @@ body {
       background: rgb(30, 30, 30);
       flex-grow: 1;
       padding: 3rem;
+
+      font-family: Consolas, sans-serif;
     }
   }
 
@@ -208,5 +206,9 @@ body {
 
   .yellow {
     color: #dbca00;
+  }
+
+  .fa-envelope {
+    margin-bottom: -0.2em;
   }
 }
