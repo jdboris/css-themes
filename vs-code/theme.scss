@@ -132,8 +132,6 @@ body {
               }
 
               nav {
-                margin-left: 0.3rem;
-
                 a {
                   &::before {
                     content: " ";
@@ -141,6 +139,7 @@ body {
                     margin-top: -4px;
                     margin-bottom: -4px;
                     align-self: stretch;
+                    margin-left: 0.3rem;
                   }
                 }
               }
