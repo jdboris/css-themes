@@ -21,10 +21,26 @@ body {
     sans-serif;
 
   figure {
-    margin: 0;
+    margin: 1em 0;
 
     figcaption {
       font-style: italic;
+    }
+  }
+
+  h1 {
+    font-size: min(3em, 8.8vw);
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    a {
+      border-bottom: 3px solid;
     }
   }
 
@@ -188,7 +204,7 @@ body {
       flex-direction: column;
       background: rgb(30, 30, 30);
       flex-grow: 1;
-      gap: 0.6rem;
+      gap: 1rem;
       padding: 3rem;
 
       font-family: Consolas, sans-serif;
@@ -235,12 +251,17 @@ body {
       sans-serif;
   }
 
+  .badge.secondary {
+    background-color: #363636;
+  }
+
   .flex-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
     padding: 0;
     margin: 0;
+    list-style: none;
   }
 
   .hero {
