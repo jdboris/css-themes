@@ -1,3 +1,5 @@
+@use "linguist-colors/colors" as linguist-colors;
+
 @import url("@vscode/codicons/dist/codicon.css");
 
 $aside-width: 12em;
@@ -9,6 +11,9 @@ body {
   padding: 0;
   margin: 0;
   color: rgb(204, 204, 204);
+  min-height: 100%;
+  // For firefox, where min-height 100% doesn't work
+  height: 100dvh;
 }
 
 * {
@@ -39,8 +44,27 @@ body {
   h4,
   h5,
   h6 {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI,
+      sans-serif;
+
     a {
+      font-family: Consolas, sans-serif;
       border-bottom: 3px solid;
+    }
+  }
+
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI,
+      sans-serif;
+    margin: 0;
+    line-height: 1.5;
+
+    a {
+      color: #3794ff;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -238,20 +262,30 @@ body {
   }
 
   .badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding-bottom: 2px;
-    padding-top: 1px;
+    padding-top: 2px;
     padding-left: 6px;
     padding-right: 6px;
+    // border-bottom: 2px solid transparent;
     background-color: #0e639c;
     color: white;
     user-select: none;
     border-radius: 2px;
     font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI,
       sans-serif;
+
+    // // Create a class for each language in the Linguist language list
+    // @each $key, $value in linguist-colors.$colors {
+    //   &.#{$key} {
+    //     border-bottom: 2px solid $value;
+    //   }
+    // }
   }
 
   .badge.secondary {
+    color: inherit;
     background-color: #363636;
   }
 
