@@ -248,6 +248,12 @@ body {
         border-left: 1px solid #393939;
       }
 
+      @media (pointer: none), (pointer: coarse) {
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(121, 121, 121, 0.4);
+        }
+      }
+
       &:hover,
       &:focus,
       &:focus-within {
