@@ -159,7 +159,7 @@ body {
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                width: 1.2em;
+                width: 1em;
               }
 
               &:hover {
@@ -334,7 +334,8 @@ body {
   }
 
   .icon {
-    width: 1.2rem;
+    width: 1rem;
+    vertical-align: middle;
   }
 
   .badge {
@@ -381,6 +382,10 @@ body {
     aspect-ratio: 16/8;
     // Fallback for when aspect-ratio is unsupported
     min-height: min(31vw, 450px);
+  }
+
+  .fa-xmark {
+    vertical-align: middle;
   }
 
   .yellow {
