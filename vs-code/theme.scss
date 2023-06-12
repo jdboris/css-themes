@@ -160,6 +160,9 @@ body {
                 justify-content: center;
                 align-items: center;
                 width: 1em;
+
+                // NOTE: Get it in the center for real
+                margin-top: 0.1em;
               }
 
               &:hover {
