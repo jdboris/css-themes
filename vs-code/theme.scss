@@ -166,7 +166,6 @@ body {
           top: 0;
           background: rgb(37, 37, 38);
           width: $aside-width;
-          user-select: none;
           height: 100%;
 
           > header {
@@ -311,7 +310,6 @@ body {
       padding: 0.7em;
       font-style: italic;
       color: white;
-      user-select: none;
     }
 
     > main {
@@ -392,7 +390,6 @@ body {
     // border-bottom: 2px solid transparent;
     background-color: #0e639c;
     color: white;
-    user-select: none;
     border-radius: 2px;
     font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI,
       sans-serif;
