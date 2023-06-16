@@ -2,7 +2,7 @@
 
 @import url("@vscode/codicons/dist/codicon.css");
 
-$aside-width: 12em;
+$aside-width: 14em;
 $nav-size-breakpoint: 645px;
 
 html,
@@ -162,7 +162,7 @@ body {
             @media screen and (max-width: $nav-size-breakpoint) {
               &::after {
                 content: "";
-                position: fixed;
+                position: absolute;
                 top: 0;
                 width: 100vw;
                 height: 100vh;
