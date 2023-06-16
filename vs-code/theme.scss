@@ -7,6 +7,8 @@ $nav-size-breakpoint: 645px;
 
 html,
 body {
+  display: flex;
+  flex-direction: column;
   font-size: 14px;
   padding: 0;
   margin: 0;
@@ -110,12 +112,26 @@ body {
     background-color: rgba(234, 92, 0, 0.33);
   }
 
+  a,
+  nav > details > summary {
+    display: inline-flex;
+    gap: 0.3em;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
   > main {
     display: flex;
     height: 100%;
+    flex-grow: 1;
+    // Prevent stretching the body
+    overflow: hidden;
 
     // SIDENAV
     > nav {
+      position: relative;
+
       > details {
         > summary {
           display: inline;
@@ -277,8 +293,8 @@ body {
                   &::before {
                     content: " ";
                     border-left: 1px solid #585858;
-                    margin-top: -1.5px;
-                    margin-bottom: -1.5px;
+                    margin-top: -0.11rem;
+                    margin-bottom: -0.11rem;
                     align-self: stretch;
                     margin-left: 0.3rem;
                   }
@@ -291,13 +307,39 @@ body {
     }
   }
 
-  a,
-  nav > details > summary {
-    display: inline-flex;
-    gap: 0.3em;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
+  > footer {
+    display: flex;
+    background: rgb(0, 122, 204);
+
+    > :first-child {
+      display: inline-flex;
+    }
+
+    > :last-child {
+      text-align: end;
+      flex-grow: 1;
+      margin-right: 0.7rem;
+    }
+
+    a,
+    span {
+      display: inline-flex;
+      gap: 0.3em;
+      align-items: center;
+      color: white;
+      padding: 0.2em 0.4em;
+      font-size: 0.9em;
+      height: 100%;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      i {
+        font-size: 1em !important;
+      }
+    }
   }
 
   spa-route {
