@@ -1,4 +1,10 @@
 .root .gamePage {
+  min-height: 100dvh;
+
+  > header {
+    padding-top: 2em;
+  }
+
   .card {
     width: 100%;
   }
