@@ -1,0 +1,1649 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Genos:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.root .landingPage {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  max-width: initial !important;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.root .landingPage::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.03125) 45%, rgba(0, 0, 0, 0.8155637255) 100%);
+  z-index: 0;
+}
+.root .landingPage * {
+  z-index: 1;
+}
+.root .landingPage strong {
+  font-size: min(5em, 12vw);
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+.root .landingPage small {
+  font-size: min(2em, 5vw);
+  color: white;
+  text-shadow: 0px 0px 5px black;
+  font-weight: 200;
+  opacity: 1;
+}
+.root .landingPage button:last-child {
+  display: inline-flex;
+  background-color: initial;
+  color: white !important;
+  font-size: 2em !important;
+  bottom: 1em;
+  opacity: 0.7;
+  padding: 0.1em;
+  margin-bottom: 2vh;
+  margin-top: 8vh;
+}
+.root .landingPage .button {
+  font-size: 1.6em;
+  margin-top: 0.7rem;
+}
+
+.root .locationPage a {
+  display: initial;
+}
+.root .locationPage address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+.root .locationPage time {
+  font-size: 4.5em;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.root .bookingPage {
+  padding: 0 0.5rem;
+}
+.root .bookingPage > header {
+  padding-top: 2em;
+}
+.root .bookingPage form {
+  position: relative;
+  gap: 1.3em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 100%;
+}
+.root .bookingPage form .overlay {
+  text-align: center;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  font-size: min(4em, 10vw);
+  box-shadow: 0px 0px 8px black;
+  font-family: "Kanit";
+  font-weight: bold;
+  text-shadow: 0px 0px 5px black;
+}
+.root .bookingPage form em {
+  position: absolute;
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.6;
+}
+.root .bookingPage form .startTimeFields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  row-gap: 0;
+  font-size: max(1.9em, 2.3vw);
+}
+.root .bookingPage form .startTimeFields ::-moz-placeholder {
+  visibility: visible;
+  opacity: 0.6;
+  font-size: 0.98em;
+}
+.root .bookingPage form .startTimeFields ::placeholder {
+  visibility: visible;
+  opacity: 0.6;
+  font-size: 0.98em;
+}
+.root .bookingPage form .startTimeFields > label,
+.root .bookingPage form .startTimeFields > .label {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: initial;
+  color: white;
+  flex-basis: initial;
+  flex-grow: initial;
+  gap: 0;
+  position: relative;
+  border-bottom: 2px solid #00ffd0;
+  line-height: initial;
+}
+.root .bookingPage form .startTimeFields > label svg,
+.root .bookingPage form .startTimeFields > .label svg {
+  position: initial;
+  font-size: 0.9em;
+  margin: 0;
+  margin-right: 0.2em;
+  margin-top: 0.3em;
+  cursor: pointer;
+}
+.root .bookingPage form .startTimeFields > label input,
+.root .bookingPage form .startTimeFields > .label input {
+  border-bottom: none;
+  min-width: initial;
+}
+.root .bookingPage form .startTimeFields button {
+  margin: 0;
+}
+.root .bookingPage form .startTimeFields input.medium {
+  width: 7em;
+}
+.root .bookingPage form .startTimeFields input.small {
+  width: 3.5em;
+}
+.root .bookingPage form .startTimeFields input[type=text] {
+  margin-bottom: 0;
+  color: #f0f0f0;
+}
+.root .bookingPage form .startTimeFields input[type=time]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.root .bookingPage form .startTimeFields input[type=date] {
+  max-width: 7em;
+}
+.root .bookingPage form .startTimeFields input[type=date]::calendar-picker-indicator {
+  display: none !important;
+}
+.root .bookingPage form .startTimeFields input[type=date]::-webkit-calendar-picker-indicator {
+  filter: contrast(0%) brightness(350%);
+  cursor: pointer;
+  max-width: 0.7em;
+  background-position: center;
+}
+.root .bookingPage form .startTimeFields input[type=date],
+.root .bookingPage form .startTimeFields input[type=time] {
+  background: initial;
+  border: initial;
+  padding: 0;
+  border-radius: 5px;
+  line-height: 1;
+  margin: 5px;
+  text-align: center;
+  /* 
+    The naming convention for the hour, minute, second, and am/pm field is
+    `-webkit-datetime-edit-{field}-field` 
+    */
+}
+.root .bookingPage form .map {
+  display: flex;
+  flex-basis: 495px;
+  flex-grow: 1;
+}
+.root .bookingPage form .map em {
+  transform: translateY(-85%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+}
+.root .bookingPage form aside {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 4;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.2em;
+  position: relative;
+  flex-basis: 330px;
+}
+.root .bookingPage form aside span {
+  white-space: nowrap;
+}
+.root .bookingPage form aside > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 170px;
+  flex-grow: 1;
+  max-width: 280px;
+  margin: auto;
+  gap: 0.6rem;
+}
+.root .bookingPage form aside > div label,
+.root .bookingPage form aside > div .label {
+  flex-grow: 1;
+  text-align: start;
+}
+.root .bookingPage form aside > div button.red {
+  width: auto;
+  align-self: center;
+}
+.root .bookingPage form aside > div button {
+  width: 100%;
+}
+.root .bookingPage form aside > fieldset {
+  display: flex;
+  gap: 0.5rem;
+  flex-grow: 1;
+  flex-basis: 270px;
+  align-items: flex-start;
+}
+.root .bookingPage form aside > fieldset label,
+.root .bookingPage form aside > fieldset .label {
+  flex-basis: 200px;
+  flex-grow: 1;
+}
+.root .bookingPage form aside > fieldset label.duration,
+.root .bookingPage form aside > fieldset .label.duration {
+  flex-basis: initial;
+  flex-grow: initial;
+  margin-left: auto;
+}
+.root .bookingPage form aside > fieldset input {
+  min-width: 200px;
+}
+.root .bookingPage form aside > fieldset button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+  width: auto;
+  margin-left: auto;
+}
+.root .bookingPage form aside > fieldset .row:last-of-type .error {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.root .bookingPage form aside > fieldset button:last-child {
+  margin-top: 1em;
+}
+.root .bookingPage form aside button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+.root .bookingPage form aside label,
+.root .bookingPage form aside .label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: gray;
+}
+.root .bookingPage form aside label > span,
+.root .bookingPage form aside .label > span {
+  font-size: 1.5em;
+  color: white;
+}
+.root .bookingPage form aside label input,
+.root .bookingPage form aside .label input {
+  width: 100%;
+}
+.root .bookingPage form aside label > small,
+.root .bookingPage form aside .label > small {
+  text-align: start;
+}
+.root .bookingPage form aside label .error,
+.root .bookingPage form aside .label .error {
+  text-align: start;
+}
+
+.root .posPage {
+  gap: 25em;
+  padding-bottom: 6em !important;
+}
+.root .posPage > * {
+  scroll-margin: -3.5em;
+}
+.root .posPage > section:nth-of-type(odd) {
+  background: initial !important;
+  padding: 0;
+}
+.root .posPage .languagePage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 7em;
+  gap: 0.3em;
+}
+.root .posPage .languagePage svg {
+  font-size: 1.2em;
+}
+.root .posPage .languagePage button {
+  background: none;
+  border: 12px solid;
+  line-height: 1;
+  padding: 0.15em 0.3em;
+}
+.root .posPage .landingPage {
+  justify-content: center;
+  gap: 1em;
+  scroll-margin: 0;
+}
+.root .posPage .landingPage .button {
+  font-size: 4em;
+  width: 10em;
+  justify-content: center;
+}
+.root .posPage .checkinPage {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.root .posPage .checkinPage main form {
+  display: flex;
+  flex-direction: column;
+  width: 780px;
+  gap: 1em;
+}
+.root .posPage .checkinPage main form fieldset {
+  flex-wrap: nowrap;
+}
+.root .posPage .checkinPage main form fieldset label,
+.root .posPage .checkinPage main form fieldset .label {
+  font-size: 3em;
+  width: 100%;
+}
+.root .posPage .checkinPage main form fieldset input {
+  width: 100%;
+  max-width: calc(100vw - 1em);
+}
+.root .posPage .checkinPage main form fieldset input.alt {
+  border-color: #fff700;
+}
+.root .posPage .checkinPage main form .error {
+  text-align: center;
+  font-size: 1.8em;
+  line-height: 1.2;
+}
+.root .posPage .checkinPage button {
+  font-size: 2em;
+  width: 100%;
+  margin-top: 1em;
+}
+.root .posPage .checkinPage .sideLines {
+  padding-top: 0.6em;
+  padding-bottom: 0;
+  max-width: 100%;
+}
+.root .posPage h1,
+.root .posPage .h1 {
+  text-align: center;
+  font-size: 5em;
+  margin: 0;
+}
+.root .posPage ~ * .modal {
+  font-size: 1.7em;
+  max-width: 550px;
+}
+.root .posPage ~ * .modal ul {
+  line-height: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.root .posPage ~ * .modal ul li {
+  display: flex;
+  flex-direction: column;
+}
+.root .posPage ~ * .modal .button {
+  margin: auto;
+}
+.root .posPage + footer {
+  display: none !important;
+}
+
+.root .gamePage {
+  min-height: 100dvh;
+}
+.root .gamePage > header {
+  padding-top: 2em;
+}
+.root .gamePage .card {
+  width: 100%;
+}
+.root .gamePage .games > li {
+  flex-basis: 300px;
+  flex-grow: 1;
+}
+.root .gamePage .games > li > * {
+  margin: 0.4em;
+}
+.root .gamePage .card > main > .row {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+}
+.root .gamePage .card > main > .row a {
+  gap: 0.3em;
+}
+
+.root .infoPage {
+  padding-bottom: 7em;
+  padding-top: 7em;
+}
+.root .infoPage > main {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.root .infoPage > main figure {
+  display: flex;
+  flex-basis: 620px;
+  flex-grow: 1;
+  min-width: min(850px, 100%);
+}
+.root .infoPage > main figure div {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+.root .infoPage > main aside {
+  padding: 1em;
+  background: rgba(13, 37, 62, 0.69);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-width: 325px;
+  gap: 1em;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+.root .infoPage > main aside > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 205px;
+  flex-grow: 1;
+}
+.root .infoPage > main aside h4,
+.root .infoPage > main aside .h4 {
+  margin: 0.1em 0;
+  margin-top: 1em;
+  white-space: nowrap;
+}
+.root .infoPage > main aside h4:first-child,
+.root .infoPage > main aside .h4:first-child {
+  margin-top: 0;
+}
+.root .infoPage > main aside ol {
+  padding: 0;
+  padding-left: 1em;
+  margin: 0;
+  margin-bottom: 1em;
+  text-align: start;
+}
+.root .infoPage > main aside > :last-child {
+  min-width: 185px;
+  flex-basis: 0;
+}
+.root .infoPage > main aside > :last-child .price {
+  position: relative;
+  font-size: 2em;
+}
+.root .infoPage > main aside > :last-child .price .old {
+  position: absolute;
+  margin-top: -0.8em;
+  color: gray;
+  font-size: 0.7em;
+  margin-left: 0.6em;
+}
+.root .infoPage > main aside > :last-child .price .old::before {
+  content: "";
+  position: absolute;
+  border: 1px solid;
+  width: 100%;
+  top: 50%;
+}
+.root .infoPage > main aside > :last-child .price small {
+  color: inherit;
+  font-weight: 200;
+  opacity: 1;
+  text-decoration: none;
+}
+.root .infoPage > main aside > :last-child .price img {
+  position: absolute;
+  width: 1.6em;
+  rotate: -15deg;
+  margin-left: -1.5em;
+  margin-top: -0.6em;
+  filter: drop-shadow(0px 0px 4px black);
+}
+
+.root .bookingsPage ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  list-style: none;
+}
+
+html,
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: "Kanit", sans-serif;
+  background: rgb(25, 20, 31);
+}
+.root > * {
+  width: 100%;
+}
+.root > main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  min-height: 100vh;
+  padding-bottom: 2em;
+}
+.root > main > section {
+  max-width: 1280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3em 1em;
+}
+.root > main > section:nth-of-type(odd) {
+  background: #120d16;
+  padding: 3em calc((100% - 1280px) / 2);
+  max-width: initial;
+  margin: 0;
+}
+.root > main > section h1,
+.root > main > section .h1 {
+  margin-top: 0;
+}
+.root > header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  background: rgba(50, 50, 50, 0.3215686275);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+.root > header nav {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+  color: white;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  height: 4.3rem;
+  max-width: 1280px;
+}
+.root > header nav > button {
+  position: absolute;
+  align-self: center;
+  color: white !important;
+  right: 0;
+  z-index: 1;
+}
+.root > header nav > button > * {
+  font-size: 2em;
+}
+.root > header nav ul li button.alt {
+  font-weight: 100;
+  text-transform: capitalize;
+  border-radius: 0;
+  padding: 1em;
+  margin: 0;
+}
+.root > header nav ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  z-index: 2;
+  height: inherit;
+}
+.root > header nav ul li {
+  display: inline-flex;
+}
+.root > header nav a:not(.logo) {
+  border-bottom: 2px solid transparent;
+  transition: color 0.1s, box-shadow 0.25s;
+}
+.root > header nav a.logo {
+  font-family: "Genos", sans-serif;
+  padding: 1rem;
+  text-transform: none;
+  font-size: 2.1em;
+  filter: drop-shadow(0px 0px 6px #000000);
+}
+.root > header nav img {
+  height: 1.2rem;
+}
+.root > header nav.open {
+  overflow: visible;
+  background: inherit;
+}
+.root > header nav.open ul {
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  height: auto;
+}
+.root > header nav.open ul a {
+  border-top: 0;
+  border-bottom: 0;
+  width: 100%;
+}
+.root > header nav.open ul button {
+  margin: 1em;
+}
+.root > header nav.open .overlay {
+  display: initial;
+}
+.root > header.minimal {
+  visibility: hidden;
+  pointer-events: none;
+}
+.root > header.minimal button,
+.root > header.minimal .button {
+  visibility: initial;
+  pointer-events: initial;
+  margin: 0;
+}
+.root > header.minimal button.alt,
+.root > header.minimal .button.alt {
+  font-size: 2em;
+  font-weight: 400;
+  gap: 0.1em;
+  line-height: 1;
+}
+.root header {
+  width: 100%;
+}
+.root nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+}
+.root > footer {
+  background: rgb(22, 22, 22);
+  color: grey;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: calc((100% - 1280px) / 2);
+  padding-right: calc((100% - 1280px) / 2);
+}
+@media screen and (max-width: 700px) {
+  .root > footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.root > footer > * {
+  padding: 1em;
+}
+.root > footer address {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+@media screen and (max-width: 700px) {
+  .root > footer address {
+    max-width: 220px;
+  }
+}
+.root > footer address svg {
+  width: 1em;
+  color: grey;
+}
+.root > footer address span {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.3em;
+       column-gap: 0.3em;
+}
+.root > footer address a {
+  flex-wrap: wrap;
+  -moz-column-gap: 0.3em;
+       column-gap: 0.3em;
+}
+.root > footer nav a {
+  display: inline-flex;
+  transition: rotate 0.1s;
+  padding: 0.5em;
+}
+.root > footer nav a img {
+  width: 2em;
+}
+.root > footer nav a:hover,
+.root > footer nav a:focus,
+.root > footer nav a:active {
+  rotate: 5deg;
+  transition: rotate 0.1s;
+}
+@media screen and (max-width: 700px) {
+  .root > footer nav ul {
+    justify-content: center;
+  }
+}
+.root > footer small {
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+}
+.root form,
+.root fieldset {
+  display: flex;
+  flex-wrap: wrap;
+}
+.root form > button:last-child,
+.root fieldset > button:last-child {
+  margin-left: auto;
+}
+.root fieldset {
+  gap: 1.4em;
+  position: relative;
+}
+.root fieldset.alt {
+  row-gap: 0.1em;
+}
+.root .smallForm {
+  max-width: 300px;
+  text-align: center;
+}
+.root .smallForm label,
+.root .smallForm .label {
+  width: 100%;
+}
+.root .smallForm label input,
+.root .smallForm .label input {
+  width: 100%;
+}
+.root nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  color: white;
+  padding: 1em;
+  cursor: pointer;
+}
+.root nav a.small {
+  padding: 0.5em;
+}
+.root nav button,
+.root nav .button {
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.3em;
+  margin: 1em;
+  align-self: center;
+}
+.root a * {
+  cursor: inherit;
+}
+.root small {
+  opacity: 0.5;
+  color: gray;
+  font-size: 0.7em;
+}
+.root figure {
+  margin: 0;
+  padding: 0;
+}
+.root img {
+  max-width: 100%;
+}
+.root address {
+  font-style: initial;
+  justify-content: center;
+  text-align: center;
+}
+.root address span {
+  white-space: nowrap;
+}
+.root h1,
+.root h2,
+.root h3,
+.root h4,
+.root h5,
+.root h6,
+.root .h1,
+.root .h2,
+.root .h3,
+.root .h4,
+.root .h5,
+.root .h6 {
+  width: 100%;
+  font-weight: bold;
+}
+.root h1 small,
+.root h2 small,
+.root h3 small,
+.root h4 small,
+.root h5 small,
+.root h6 small,
+.root .h1 small,
+.root .h2 small,
+.root .h3 small,
+.root .h4 small,
+.root .h5 small,
+.root .h6 small {
+  font-size: 0.9rem;
+  font-weight: normal;
+  text-transform: initial;
+  opacity: 0.5;
+  width: 100%;
+}
+.root .h1,
+.root h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+.root .h2,
+.root h2 {
+  font-size: 2.5rem;
+}
+.root .h3,
+.root h3 {
+  font-size: 2rem;
+}
+.root .h4,
+.root h4 {
+  font-size: 1.5rem;
+}
+.root .h5,
+.root h5 {
+  font-size: 1rem;
+}
+.root .h6,
+.root h6 {
+  font-size: 0.9rem;
+}
+.root label,
+.root .label {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  align-self: center;
+}
+.root label svg,
+.root .label svg {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 1.2rem;
+  z-index: 1;
+}
+.root label svg + input,
+.root .label svg + input {
+  padding-left: 3rem;
+}
+.root label > small,
+.root .label > small {
+  position: absolute;
+  left: 0;
+  bottom: 0.5em;
+  min-width: 100%;
+  margin: auto;
+  font-size: 1em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.8;
+  line-height: 1em;
+  transition: bottom 0.05s, font-size 0.05s;
+}
+.root label > input:not(:-moz-placeholder-shown) ~ small, .root .label > input:not(:-moz-placeholder-shown) ~ small {
+  font-size: 0.7em;
+  bottom: 2em;
+}
+.root label > input:focus ~ small,
+.root label > input:not([value=""]) ~ small,
+.root label > input:not(:placeholder-shown) ~ small,
+.root .label > input:focus ~ small,
+.root .label > input:not([value=""]) ~ small,
+.root .label > input:not(:placeholder-shown) ~ small {
+  font-size: 0.7em;
+  bottom: 2em;
+}
+.root input,
+.root textarea {
+  font-family: "Chivo Mono", monospace;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0.3rem;
+  background: rgb(15, 15, 15);
+  border: 1px solid #1c1c1c;
+  padding: 0.7rem 1.2rem;
+  color: white;
+  border-radius: 5rem;
+  letter-spacing: 0.1em;
+}
+.root input::calendar-picker-indicator,
+.root textarea::calendar-picker-indicator {
+  display: none !important;
+}
+.root input::-webkit-calendar-picker-indicator,
+.root textarea::-webkit-calendar-picker-indicator {
+  filter: contrast(0%) brightness(350%);
+  cursor: pointer;
+  max-width: 0.7em;
+  background-position: center;
+}
+.root textarea {
+  border-radius: 5px;
+  min-height: 150px;
+}
+.root input.small {
+  max-width: 6em;
+}
+.root input.alt {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #00ffd0;
+  border-radius: 0;
+  padding: 0;
+  padding-top: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+.root input:disabled,
+.root textarea:disabled {
+  color: gray;
+}
+.root input:-webkit-autofill,
+.root input:-webkit-autofill:hover,
+.root input:-webkit-autofill:focus,
+.root input:-webkit-autofill:active {
+  border: 1px solid white;
+  -webkit-text-fill-color: white;
+  box-shadow: 0 0 0px 1000px #1b1b1b inset;
+}
+.root textarea {
+  width: 100%;
+  resize: none;
+  padding: 1em;
+}
+.root .checkboxLabel {
+  display: inline-flex;
+  cursor: pointer;
+  flex-direction: initial;
+  align-items: center;
+  gap: 0.3em;
+}
+.root .checkboxLabel input {
+  display: none;
+}
+.root .checkboxLabel input + * {
+  opacity: 0.3;
+  left: 0;
+}
+.root .checkboxLabel input:checked + * {
+  opacity: 1;
+}
+.root .checkboxLabel > * {
+  margin: 0;
+  position: relative;
+}
+.root ::-moz-placeholder {
+  font-family: "Kanit", sans-serif;
+  font-style: italic;
+}
+.root ::placeholder {
+  font-family: "Kanit", sans-serif;
+  font-style: italic;
+}
+.root .alt::-moz-placeholder {
+  visibility: hidden;
+  font-style: initial;
+  opacity: 0;
+}
+.root .alt::placeholder {
+  visibility: hidden;
+  font-style: initial;
+  opacity: 0;
+}
+.root .alt:focus::-moz-placeholder {
+  visibility: visible;
+  font-style: initial;
+  opacity: 0.6;
+}
+.root .alt:focus::placeholder {
+  visibility: visible;
+  font-style: initial;
+  opacity: 0.6;
+}
+.root fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.root a,
+.root .link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  color: #70ffce;
+}
+.root .link {
+  background: none;
+  font-size: initial;
+  text-transform: initial;
+}
+.root .link:hover {
+  cursor: pointer;
+}
+.root blockquote {
+  position: relative;
+  color: #8b8b8b;
+  font-style: italic;
+  background: #f9f9f9;
+  border-left: 10px solid rgb(118, 80, 161);
+  margin: 1.5em 10px;
+  padding: 1.1em 10px;
+  padding-left: 2em;
+}
+.root blockquote:before {
+  content: "“";
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ccc;
+  font-size: 4em;
+  left: 0.1em;
+  top: 0em;
+}
+.root code {
+  display: inline;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  color: #666;
+  font-family: monospace;
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  overflow: auto;
+  word-wrap: break-word;
+  padding: 0em 0.2em;
+  border-radius: 0.2em;
+}
+.root pre code {
+  display: block;
+  border-left: 3px solid rgb(118, 80, 161);
+  page-break-inside: avoid;
+  max-width: 100%;
+  padding: 1em 1.5em;
+  margin: 10px;
+}
+.root button,
+.root .button,
+.root button.alt {
+  font-weight: bold;
+  color: white;
+  background-color: #786388;
+  border: none;
+  border-radius: 0.2em;
+  padding: 0.5em 0.9em;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  align-items: center;
+  cursor: pointer;
+}
+.root button.alt {
+  display: inline-flex;
+  background-color: initial;
+  padding: 0em;
+}
+.root button:disabled,
+.root .button:disabled,
+.root button.alt:disabled {
+  opacity: 0.5;
+  cursor: initial;
+}
+.root a[rel=author] {
+  font-weight: bold;
+  color: #b50000;
+}
+.root .overlay {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.root .success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+  color: rgb(119, 255, 119);
+  font-size: 0.9em;
+  width: 100%;
+  font-weight: 200;
+  opacity: 1;
+}
+.root .success ~ input {
+  border-color: rgb(119, 255, 119);
+  background-color: #002502;
+}
+.root .error {
+  color: red;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 1;
+  line-height: 1em;
+  font-style: initial;
+}
+.root .error svg {
+  position: initial;
+  vertical-align: middle;
+  margin-top: -0.25em;
+}
+.root label .error,
+.root .label .error {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.8rem;
+  margin-bottom: -0.8rem;
+}
+.root label .error ~ * input, .root label .error ~ input,
+.root .label .error ~ * input,
+.root .label .error ~ input {
+  border-color: red;
+}
+.root label .error ~ * input ~ small, .root label .error ~ input ~ small,
+.root .label .error ~ * input ~ small,
+.root .label .error ~ input ~ small {
+  color: red;
+}
+.root label.error input,
+.root .label.error input {
+  border-color: red;
+}
+.root .article header,
+.root .article footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.root .article header h1,
+.root .article footer h1 {
+  display: flex;
+  flex-direction: column;
+}
+.root .article header small,
+.root .article footer small {
+  width: 100%;
+}
+.root video {
+  background: black;
+  width: 100%;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+}
+.root .videoPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1em;
+  background: black;
+  width: 100%;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+  position: relative;
+}
+.root .videoPlayer > svg {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 2em;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.8));
+}
+.root .videoPlayer > video {
+  position: absolute;
+  z-index: -1;
+}
+.root section > main {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.root section > main > ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.root section > main > ul > li {
+  display: flex;
+  flex-basis: 0;
+}
+.root .hidden {
+  display: none;
+}
+.root .row {
+  width: 100%;
+}
+.root .center {
+  text-align: center;
+}
+.root .card {
+  display: inline-flex;
+  flex-wrap: wrap;
+  background: #09060b;
+  box-shadow: 0 0 4px black;
+  flex-direction: column;
+  min-width: 280px;
+  min-height: 160px;
+  flex-grow: 1;
+  justify-content: initial;
+}
+.root .card:not(.open) {
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.root .card > header {
+  font-weight: 600;
+  text-align: center;
+}
+.root .card img {
+  width: 100%;
+  cursor: pointer;
+}
+.root .card ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+.root .card ul li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.root .card p {
+  border-radius: 0 0 0.5em 0.5em;
+  margin: 0;
+  margin-top: 0.5em;
+  font-weight: 300;
+  color: lightgrey;
+}
+.root .card.open {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  max-width: 900px;
+  position: fixed;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto !important;
+  z-index: 5;
+}
+.root .card.open .overlay {
+  display: initial;
+  z-index: 1;
+}
+.root .card.open .videoPlayer {
+  z-index: 2;
+}
+.root .card.open > header {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  text-shadow: 0px 0px 11px black;
+  font-size: 1.5em;
+  justify-content: space-between;
+  width: 100%;
+  height: 1.5em;
+  padding: 0 0.4em;
+  filter: drop-shadow(0px 0px 3px black);
+  z-index: 2;
+}
+.root .card.open > main {
+  padding: 1em;
+  z-index: 2;
+}
+.root .badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+.root .badge {
+  display: inline;
+  list-style: none;
+  background: #3f4fcc;
+  padding: 0.15em 0.7em;
+  font-size: 0.9em;
+  border-radius: 2em;
+  white-space: nowrap;
+  margin: 0;
+}
+.root .paddingContainer {
+  width: 100%;
+  padding-left: calc((100% - 1280px) / 2);
+  padding-right: calc((100% - 1280px) / 2);
+}
+.root .modal {
+  min-width: 100px;
+  max-width: 350px;
+  background: black;
+}
+.root .modal > header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1em;
+}
+.root .modal > main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 2em;
+  background: #060606;
+}
+.root .modal > main svg {
+  font-size: 0.8em;
+}
+.root .fixedButton {
+  position: fixed;
+  display: flex;
+  gap: 0.4em;
+  right: 1em;
+  bottom: 1em;
+  z-index: 1;
+}
+.root .profileImage {
+  border-radius: 50%;
+}
+.root .pageHeader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #92c954;
+  z-index: 3;
+  font-size: 1.2em;
+  padding-left: calc((100% - 1280px) / 2);
+  padding-right: calc((100% - 1280px) / 2);
+  margin: 10px 0;
+}
+.root .pageHeader h1 {
+  padding: 0.2em;
+  font-weight: normal;
+  margin: min(0.4em, 5vw);
+}
+.root .scale {
+  display: flex;
+}
+.root .scale > div {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+.root input[type=range] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  height: 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.root input[type=range]::-webkit-slider-runnable-track {
+  height: 1rem;
+}
+.root input[type=range]::-moz-range-track {
+  height: 1rem;
+}
+.root input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+       appearance: none;
+  width: 2rem;
+  height: 2rem;
+  background: #0075ff;
+  border-radius: 50%;
+  border: none;
+}
+.root input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 2rem;
+  height: 2rem;
+  background: #0075ff;
+  border-radius: 50%;
+  border: none;
+  translate: 0 -25%;
+}
+.root input[type=range] + datalist {
+  padding: 0;
+  padding-left: 1rem;
+  padding-right: 0.9rem;
+  justify-content: space-between;
+  cursor: default;
+}
+.root input[type=range] + datalist * {
+  display: inline-flex;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 1rem;
+  width: 1px;
+  padding: 0;
+  margin-top: 0.5em;
+  color: #939393;
+}
+.root input[type=range] + datalist *::before {
+  content: "";
+  position: absolute;
+  border-left: 1px solid;
+  height: 0.1em;
+  margin-top: -0.5em;
+  color: #939393;
+}
+.root .timeSlider {
+  background: rgb(15, 15, 15);
+  background: linear-gradient(90deg, rgba(15, 15, 15, 0) 0%, rgb(15, 15, 15) 1.7rem, rgb(15, 15, 15) calc(100% - 1.7rem), rgba(15, 15, 15, 0) 100%);
+}
+.root .timeSlider + datalist option:nth-child(6n+1)::before {
+  height: 0.2em;
+}
+.root .timeSlider + datalist option:nth-child(12n+1)::before {
+  height: 0.4em;
+}
+.root .timeSlider + datalist option:first-child::before {
+  height: 0.6em;
+}
+.root .timeSlider + datalist option:last-child::before {
+  height: 0.6em;
+}
+.root .sideLines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+.root .sideLines::before, .root .sideLines::after {
+  content: "";
+  height: 1px;
+  width: 6em;
+  background: rgba(255, 255, 255, 0.1294117647);
+  margin: 0 0.4em;
+}
+.root .flexFiller {
+  box-shadow: none;
+  background: none;
+}
+.root .installButton {
+  margin-top: 0.7rem;
+}
+@media (min-width: 1024px) {
+  .root .installButton {
+    display: none;
+  }
+}
+.root .grayed {
+  filter: brightness(40%);
+}
+.root .tan {
+  color: #e3a22c;
+}
+.root .green {
+  color: #77ff77;
+}
+.root .yellow {
+  color: #e3d72c;
+}
+.root .red:not(button):not(.button) {
+  color: red;
+}
+.root button.blue,
+.root .button.blue {
+  background-color: #0075ff;
+}
+.root button.orange,
+.root .button.orange {
+  background-color: #ff5200;
+}
+.root button.red,
+.root .button.red {
+  background-color: darkred;
+}
+.root .map {
+  position: relative;
+  align-self: flex-start;
+}
+.root .map > img {
+  width: 100%;
+}
+.root .map label,
+.root .map .label {
+  position: absolute;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.root .map label input[type=checkbox],
+.root .map .label input[type=checkbox] {
+  display: none;
+}
+.root .map label input[type=checkbox] ~ *,
+.root .map .label input[type=checkbox] ~ * {
+  display: flex;
+  gap: 0.2em;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  padding: 0.5em;
+  font-size: min(1.3em, 3.3vw);
+  white-space: nowrap;
+  flex-wrap: wrap;
+  line-height: 1em;
+  align-content: flex-start;
+}
+.root .map label input[type=checkbox] ~ *::before,
+.root .map .label input[type=checkbox] ~ *::before {
+  content: "";
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  font-size: 1.3em;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #00ffd0;
+  background: #110e14;
+  overflow: visible;
+}
+.root .map label input[type=checkbox] ~ *:hover,
+.root .map .label input[type=checkbox] ~ *:hover {
+  border: 1px solid #00ffd0;
+  box-shadow: 0em 0em 1em black;
+}
+.root .map label input[type=checkbox]:checked ~ *,
+.root .map .label input[type=checkbox]:checked ~ * {
+  background: rgba(0, 255, 149, 0.3294117647);
+}
+.root .map label input[type=checkbox]:checked ~ *::before,
+.root .map .label input[type=checkbox]:checked ~ *::before {
+  content: "✔";
+  justify-content: center;
+  align-items: center;
+}
+.root .map label input[type=checkbox]:disabled ~ *,
+.root .map .label input[type=checkbox]:disabled ~ * {
+  background: #000000;
+  opacity: 0.3;
+  cursor: default;
+}
+.root .map label input[type=checkbox]:disabled ~ *:hover,
+.root .map .label input[type=checkbox]:disabled ~ *:hover {
+  border: 1px solid transparent;
+}/*# sourceMappingURL=theme.module.css.map */

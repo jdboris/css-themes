@@ -26,6 +26,11 @@ body {
   background: rgb(51, 51, 51);
   font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI,
     sans-serif;
+
+  ::selection {
+    background-color: rgb(89 95 8);
+  }
+
   h1,
   .h1 {
     font-size: min(3em, 8.8vw);

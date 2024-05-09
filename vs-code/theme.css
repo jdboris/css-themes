@@ -1,0 +1,377 @@
+@import url("@vscode/codicons/dist/codicon.css");
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  color: rgb(204, 204, 204);
+  min-height: 100%;
+  height: 100dvh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(51, 51, 51);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, sans-serif;
+}
+body h1,
+body .h1 {
+  font-size: min(3em, 8.8vw);
+  margin: 0;
+}
+body h1,
+body .h1,
+body h2,
+body .h2,
+body h3,
+body .h3,
+body h4,
+body .h4,
+body h5,
+body .h5,
+body h6,
+body .h6 {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, sans-serif;
+}
+body h1 a,
+body .h1 a,
+body h2 a,
+body .h2 a,
+body h3 a,
+body .h3 a,
+body h4 a,
+body .h4 a,
+body h5 a,
+body .h5 a,
+body h6 a,
+body .h6 a {
+  font-family: Consolas, sans-serif;
+  border-bottom: 3px solid;
+}
+body p {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+}
+body p a {
+  color: #3794ff;
+}
+body p a:hover {
+  text-decoration: underline;
+}
+body form {
+  display: flex;
+}
+body form > * {
+  width: 100%;
+}
+body input {
+  background: #3c3c3c;
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  padding: 0.25em 0.5em;
+  border-radius: 2px;
+}
+body input[type=search]::-webkit-search-decoration, body input[type=search]::-webkit-search-cancel-button, body input[type=search]::-webkit-search-results-button, body input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+          appearance: none;
+}
+body img {
+  max-width: 100%;
+  max-height: 100%;
+}
+body figure {
+  margin: 1em 0;
+}
+body figure figcaption {
+  font-style: italic;
+}
+body mark {
+  color: inherit;
+  background-color: rgba(234, 92, 0, 0.33);
+}
+body a,
+body nav > details > summary {
+  display: inline-flex;
+  gap: 0.3em;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+body > main {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+}
+body > main > nav {
+  position: relative;
+}
+body > main > nav > details > summary {
+  display: inline;
+  cursor: pointer;
+  list-style: none;
+}
+body > main > nav > details > summary::marker, body > main > nav > details > summary::-webkit-details-marker {
+  display: none;
+}
+body > main > nav > details > summary > i {
+  font-size: 1.71rem !important;
+  padding: 0.85rem;
+  padding-left: calc(0.9rem - 2px);
+  border-left: 2px solid transparent;
+}
+body > main > nav > details[open] {
+  white-space: nowrap;
+}
+@media screen and (min-width: 645px) {
+  body > main > nav > details[open] {
+    margin-right: 14em;
+  }
+}
+@media screen and (max-width: 645px) {
+  body > main > nav > details[open] > summary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+body > main > nav > details[open] > summary > i {
+  color: white;
+  border-left-color: white;
+}
+body > main > nav > details > aside {
+  display: inline;
+  position: absolute;
+  top: 0;
+  background: rgb(37, 37, 38);
+  width: 14em;
+  height: 100%;
+}
+body > main > nav > details > aside > header {
+  text-transform: uppercase;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.8em;
+  color: rgb(184, 184, 184);
+}
+body > main > nav > details > aside > form {
+  padding: 0.7rem 0.8rem 0.7rem 1.4rem;
+}
+body > main > nav > details > aside nav {
+  display: flex;
+  flex-direction: column;
+}
+body > main > nav > details > aside nav a {
+  padding: 0.11rem 1rem;
+  width: 100%;
+}
+body > main > nav > details > aside nav a > span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body > main > nav > details > aside nav a > img:first-child,
+body > main > nav > details > aside nav a > svg:first-child,
+body > main > nav > details > aside nav a > i:first-child {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  margin-top: 0.1em;
+}
+body > main > nav > details > aside nav a:hover {
+  background: rgb(42, 45, 46);
+}
+body > main > nav > details > aside nav a.active {
+  background: #37373d;
+}
+body > main > nav > details > aside nav summary {
+  width: 100%;
+  cursor: pointer;
+  list-style: none;
+  padding-left: 1rem;
+}
+body > main > nav > details > aside nav summary.active {
+  background: #37373d;
+}
+body > main > nav > details > aside nav summary:hover {
+  background: rgb(42, 45, 46);
+}
+body > main > nav > details > aside nav summary > a {
+  padding-left: 0;
+}
+body > main > nav > details > aside nav summary > a.active, body > main > nav > details > aside nav summary > a:hover {
+  background-color: initial;
+}
+body > main > nav > details > aside nav summary::marker, body > main > nav > details > aside nav summary::-webkit-details-marker {
+  display: none;
+}
+body > main > nav > details > aside nav summary::before {
+  content: "\eab6";
+  font-family: "codicon";
+  vertical-align: middle;
+  font-size: 1.15rem;
+}
+body > main > nav > details > aside nav details[open] summary:focus, body > main > nav > details > aside nav details[open] summary:focus-within {
+  background: #37373d;
+}
+body > main > nav > details > aside nav details[open] summary::before {
+  content: "\eab4";
+}
+body > main > nav > details > aside nav details:not([open]) > summary > a {
+  background-color: initial;
+}
+body > main > nav > details > aside nav details nav a::before {
+  content: " ";
+  border-left: 1px solid #585858;
+  margin-top: -0.11rem;
+  margin-bottom: -0.11rem;
+  align-self: stretch;
+  margin-left: 0.3rem;
+}
+body > footer {
+  display: flex;
+  background: rgb(0, 122, 204);
+}
+body > footer > :first-child {
+  display: inline-flex;
+}
+body > footer > :last-child {
+  text-align: end;
+  flex-grow: 1;
+  margin-right: 0.7rem;
+}
+body > footer a,
+body > footer span {
+  display: inline-flex;
+  gap: 0.3em;
+  align-items: center;
+  color: white;
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+  height: 100%;
+  cursor: pointer;
+}
+body > footer a:hover,
+body > footer span:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+body > footer a i,
+body > footer span i {
+  font-size: 1em !important;
+}
+body spa-route {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+body spa-route > header {
+  background: rgb(30, 30, 30);
+  align-self: flex-start;
+  padding: 0.7em;
+  font-style: italic;
+  color: white;
+}
+body spa-route > main {
+  display: flex;
+  flex-direction: column;
+  background: rgb(30, 30, 30);
+  flex-grow: 1;
+  gap: 1rem;
+  padding: min(3rem, 5vw);
+  overflow-y: scroll;
+  font-family: Consolas, sans-serif;
+}
+body spa-route > main::-webkit-scrollbar {
+  width: 14px;
+}
+body spa-route > main::-webkit-scrollbar-track {
+  background: transparent;
+  border-top: 1px solid #393939;
+  border-left: 1px solid #393939;
+}
+@media (pointer: none), (pointer: coarse) {
+  body spa-route > main::-webkit-scrollbar-thumb {
+    background-color: rgba(121, 121, 121, 0.4);
+  }
+}
+body spa-route > main:hover::-webkit-scrollbar-thumb, body spa-route > main:focus::-webkit-scrollbar-thumb, body spa-route > main:focus-within::-webkit-scrollbar-thumb {
+  background-color: rgba(121, 121, 121, 0.4);
+}
+body spa-route > main:hover::-webkit-scrollbar-thumb:hover, body spa-route > main:focus::-webkit-scrollbar-thumb:hover, body spa-route > main:focus-within::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.7);
+}
+body spa-route > main > * {
+  max-width: 900px;
+}
+body button,
+body .button {
+  background: rgb(14, 99, 156);
+  color: white;
+  padding: 1em 1.3em;
+  border: none;
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  justify-content: center;
+  cursor: pointer;
+}
+body button.orange,
+body .button.orange {
+  background: #ef8500;
+}
+body .icon {
+  width: 1em;
+  vertical-align: middle;
+}
+body .badge {
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background-color: #0e639c;
+  color: white;
+  border-radius: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, sans-serif;
+}
+body .badge.secondary {
+  color: inherit;
+  background-color: #363636;
+}
+body .flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body .hero {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16/8;
+  min-height: min(31vw, 450px);
+}
+body .fa-xmark {
+  vertical-align: middle;
+}
+body .yellow {
+  color: #dbca00;
+}
+body .fa-envelope {
+  margin-bottom: -0.2em;
+}/*# sourceMappingURL=theme.css.map */
