@@ -19,6 +19,12 @@ body {
   background: rgb(51, 51, 51);
   font-family: -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, sans-serif;
 }
+body ::-moz-selection {
+  background-color: rgb(89, 95, 8);
+}
+body ::selection {
+  background-color: rgb(89, 95, 8);
+}
 body h1,
 body .h1 {
   font-size: min(3em, 8.8vw);
@@ -112,6 +118,9 @@ body > main {
 }
 body > main > nav {
   position: relative;
+}
+body > main > nav > details {
+  display: flex;
 }
 body > main > nav > details > summary {
   display: inline;

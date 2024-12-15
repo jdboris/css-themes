@@ -138,6 +138,8 @@ body {
       position: relative;
 
       > details {
+        display: flex;
+
         > summary {
           display: inline;
           cursor: pointer;
